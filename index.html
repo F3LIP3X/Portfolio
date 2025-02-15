@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Felipe Toledano, desarrollador front-end junior.">
+    <meta name="keywords" content="Felipe Toledano, desarrollador, front-end, portafolio">
     <link rel="icon" type="image/jpg" href="./assets/archivo18.jpg">
     <title>Portafolio de Felipe Toledano</title>
     <!-- Bootstrap CSS -->
@@ -21,7 +23,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
         <div class="container">
             <a class="navbar-brand" href="#">Felipe Toledano</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -41,6 +43,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#skills">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Proyectos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contacto</a>
@@ -63,292 +68,294 @@
             <div class="d-flex justify-content-center gap-3 animate__animated animate__fadeInUp">
                 <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
                 <a href="#contact" class="btn btn-outline-primary">Contactar</a>
-                <a href="./assets/CV_Felipe_Toledano.pdf" class="btn btn-success" download>
+                <a href="./assets/CV_Felipe_Toledano.pdf" class="btn btn-success animate__animated animate__pulse animate__infinite" download>
                     <i class="fas fa-download me-2"></i>Descargar CV
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Sobre Mí -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Sobre Mí</h2>
-            <div class="row align-items-center">
-                <div class="col-md-4 text-center text-md-start">
-                    <img src="./assets/archivo18.jpg" alt="Felipe Toledano" class="about-img animate__animated animate__fadeIn">
+    <main>
+        <!-- Sobre Mí -->
+        <section id="about" class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Sobre Mí</h2>
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center text-md-start">
+                        <img src="./assets/archivo18.jpg" alt="Foto de Felipe Toledano" class="about-img animate__animated animate__fadeIn">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="about-content text-md-start">
+                            <p class="animate__animated animate__fadeInUp">
+                                Soy un desarrollador Full Stack Junior. Me especializo en el desarrollo
+                                de aplicaciones web modernas y eficientes, combinando tecnologías front-end y back-end.
+                            </p>
+                            <p class="animate__animated animate__fadeInUp">
+                                Mi formación en Desarrollo de Aplicaciones Multiplataforma (DAM) y Desarrollo de Aplicaciones Web (DAW) me ha proporcionado una sólida base
+                                en programación y arquitectura de software. Me apasiona especialmente el desarrollo front-end,
+                                donde puedo combinar mi creatividad con mis habilidades técnicas para crear interfaces intuitivas
+                                y atractivas.
+                            </p>
+                            <p class="animate__animated animate__fadeInUp">
+                                Actualmente, me encuentro expandiendo mis conocimientos en tecnologías como React, Node.js y bases
+                                de datos tanto SQL como NoSQL. Mi objetivo es crear soluciones que no solo funcionen bien, sino que
+                                también proporcionen una excelente experiencia de usuario.
+                            </p>
+                            <p class="animate__animated animate__fadeInUp">
+                                Durante mi formación, he adquirido experiencia en:
+                                <ul class="learning-list">
+                                    <li>Desarrollo web full-stack con tecnologías modernas</li>
+                                    <li>Implementación de APIs RESTful</li>
+                                    <li>Diseño y gestión de bases de datos</li>
+                                    <li>Control de versiones y metodologías ágiles</li>
+                                    <li>Desarrollo de aplicaciones móviles nativas</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-8">
-                    <div class="about-content text-md-start">
-                        <p class="animate__animated animate__fadeInUp">
-                            Soy un desarrollador Full Stack Junior. Me especializo en el desarrollo
-                            de aplicaciones web modernas y eficientes, combinando tecnologías front-end y back-end.
-                        </p>
-                        <p class="animate__animated animate__fadeInUp">
-                            Mi formación en Desarrollo de Aplicaciones Multiplataforma (DAM) y Desarrollo de Aplicaciones Web (DAW) me ha proporcionado una sólida base
-                            en programación y arquitectura de software. Me apasiona especialmente el desarrollo front-end,
-                            donde puedo combinar mi creatividad con mis habilidades técnicas para crear interfaces intuitivas
-                            y atractivas.
-                        </p>
-                        <p class="animate__animated animate__fadeInUp">
-                            Actualmente, me encuentro expandiendo mis conocimientos en tecnologías como React, Node.js y bases
-                            de datos tanto SQL como NoSQL. Mi objetivo es crear soluciones que no solo funcionen bien, sino que
-                            también proporcionen una excelente experiencia de usuario.
-                        </p>
-                        <p class="animate__animated animate__fadeInUp">
-                            Durante mi formación, he adquirido experiencia en:
-                            <ul class="learning-list">
-                                <li>Desarrollo web full-stack con tecnologías modernas</li>
-                                <li>Implementación de APIs RESTful</li>
-                                <li>Diseño y gestión de bases de datos</li>
-                                <li>Control de versiones y metodologías ágiles</li>
-                                <li>Desarrollo de aplicaciones móviles nativas</li>
+            </div>
+        </section>
+
+        <!-- Nueva sección de Educación -->
+        <section id="education" class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Educación</h2>
+                <div class="row g-4">
+                    <div class="col-md-4 animate__animated animate__fadeInLeft">
+                        <div class="education-card">
+                            <img src="./assets/institutions/stem.png" alt="Logo de STEM Granada" class="institution-img mb-3">
+                            <h3>Desarrollo de Aplicaciones Web</h3>
+                            <p class="institution">STEM Granada</p>
+                            <p class="year">2024</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 animate__animated animate__fadeIn">
+                        <div class="education-card">
+                            <img src="./assets/institutions/medac.jpg" alt="Logo de Medac Nevada" class="institution-img mb-3">
+                            <h3>Desarrollo de Aplicaciones Multiplataforma</h3>
+                            <p class="institution">Medac Nevada</p>
+                            <p class="year">2023</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 animate__animated animate__fadeInRight">
+                        <div class="education-card">
+                            <img src="./assets/institutions/hlanz.jpg" alt="Logo de IES Hermenegildo Lanz" class="institution-img mb-3">
+                            <h3>Sistemas Microinformáticos y Redes</h3>
+                            <p class="institution">IES Hermenegildo Lanz</p>
+                            <p class="year">2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiencia -->
+        <section id="experience" class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Experiencia</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 animate__animated animate__fadeInLeft">
+                        <div class="experience-card">
+                            <h3 class="card-title">Junior Front Developer</h3>
+                            <p><strong>Arena Pro Gaming</strong> | Abril - Junio 2024</p>
+                            <ul>
+                                <li>Desarrollo de aplicaciones web con React y Node.js</li>
+                                <li>Control de versiones con Git y GitHub</li>
+                                <li>Diseño de interfaces con Tailwind CSS</li>
+                                <li>Trabajo en equipo y metodologías ágiles</li>
                             </ul>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Nueva sección de Educación -->
-    <section id="education" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Educación</h2>
-            <div class="row g-4">
-                <div class="col-md-4 animate__animated animate__fadeInLeft">
-                    <div class="education-card">
-                        <img src="./assets/institutions/stem.png" alt="STEM Granada" class="institution-img mb-3">
-                        <h3>Desarrollo de Aplicaciones Web</h3>
-                        <p class="institution">STEM Granada</p>
-                        <p class="year">2024</p>
-                    </div>
-                </div>
-                <div class="col-md-4 animate__animated animate__fadeIn">
-                    <div class="education-card">
-                        <img src="./assets/institutions/medac.jpg" alt="Medac Nevada" class="institution-img mb-3">
-                        <h3>Desarrollo de Aplicaciones Multiplataforma</h3>
-                        <p class="institution">Medac Nevada</p>
-                        <p class="year">2023</p>
-                    </div>
-                </div>
-                <div class="col-md-4 animate__animated animate__fadeInRight">
-                    <div class="education-card">
-                        <img src="./assets/institutions/hlanz.jpg" alt="IES Hermenegildo Lanz" class="institution-img mb-3">
-                        <h3>Sistemas Microinformáticos y Redes</h3>
-                        <p class="institution">IES Hermenegildo Lanz</p>
-                        <p class="year">2021</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experiencia -->
-    <section id="experience" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Experiencia</h2>
-            <div class="row g-4">
-                <div class="col-md-6 animate__animated animate__fadeInLeft">
-                    <div class="experience-card">
-                        <h3 class="card-title">Junior Front Developer</h3>
-                        <p><strong>Arena Pro Gaming</strong> | Abril - Junio 2024</p>
-                        <ul>
-                            <li>Desarrollo de aplicaciones web con React y Node.js</li>
-                            <li>Control de versiones con Git y GitHub</li>
-                            <li>Diseño de interfaces con Tailwind CSS</li>
-                            <li>Trabajo en equipo y metodologías ágiles</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 animate__animated animate__fadeIn">
-                    <div class="experience-card">
-                        <h3 class="card-title">Técnico Informático</h3>
-                        <p><strong>Universidad de Relaciones Laborales</strong> | Abril - Junio 2022</p>
-                        <ul>
-                            <li>Mantenimiento y optimización de sistemas</li>
-                            <li>Soporte técnico y resolución de incidencias</li>
-                            <li>Gestión de redes y servidores</li>
-                            <li>Documentación y procedimientos técnicos</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Habilidades -->
-    <section id="skills" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Habilidades</h2>
-            <div class="row text-center g-4">
-                <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                    <div class="card skill-card">
-                        <div class="card-body">
-                            <i class="fab fa-react fa-3x mb-3"></i>
-                            <h5 class="card-title">React</h5>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                    <div class="card skill-card">
-                        <div class="card-body">
-                            <i class="fab fa-js fa-3x mb-3"></i>
-                            <h5 class="card-title">TypeScript</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                    <div class="card skill-card">
-                        <div class="card-body">
-                            <i class="fab fa-node fa-3x mb-3"></i>
-                            <h5 class="card-title">NodeJs</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                    <div class="card skill-card">
-                        <div class="card-body">
-                            <i class="fab fa-docker fa-3x mb-3"></i>
-                            <h5 class="card-title">Docker</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                    <div class="card skill-card">
-                        <div class="card-body">
-                            <i class="fab fa-css3 fa-3x mb-3"></i>
-                            <h5 class="card-title">Tailwind/Bootstrap</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                    <div class="card skill-card">
-                        <div class="card-body">
-                            <i class="fas fa-database fa-3x mb-3"></i>
-                            <h5 class="card-title">MySQL/MongoDB</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                    <div class="card skill-card">
-                        <div class="card-body">
-                            <i class="fab fa-php fa-3x mb-3"></i>
-                            <h5 class="card-title">PHP/Laravel</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                    <div class="card skill-card">
-                        <div class="card-body">
-                            <i class="fab fa-java fa-3x mb-3"></i>
-                            <h5 class="card-title">Java</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                    <div class="card skill-card">
-                        <div class="card-body">
-                            <i class="fab fa-python fa-3x mb-3"></i>
-                            <h5 class="card-title">Python</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                    <div class="card skill-card">
-                        <div class="card-body">
-                            <i class="fab fa-github fa-3x mb-3"></i>
-                            <h5 class="card-title">GitHub</h5>
+                    <div class="col-md-6 animate__animated animate__fadeIn">
+                        <div class="experience-card">
+                            <h3 class="card-title">Técnico Informático</h3>
+                            <p><strong>Universidad de Relaciones Laborales</strong> | Abril - Junio 2022</p>
+                            <ul>
+                                <li>Mantenimiento y optimización de sistemas</li>
+                                <li>Soporte técnico y resolución de incidencias</li>
+                                <li>Gestión de redes y servidores</li>
+                                <li>Documentación y procedimientos técnicos</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-5">Proyectos Destacados</h2>
-            <div class="row g-4">
-                <!-- STEMFounding -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <img src="assets/Laravel.png" alt="STEMFounding Preview">
-                            <div class="tech-stack">
-                                <i class="fab fa-php" title="PHP"></i>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h3>STEMFounding</h3>
-                            <p>Project manager hecho con Laravel durante el segundo trimestre del DAM en STEM Granada.</p>
-                            <div class="card-actions">
-                                <a href="https://github.com/F3LIP3X/STEMFounding" class="btn btn-primary">Ver Proyecto</a>
+        <!-- Habilidades -->
+        <section id="skills" class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Habilidades</h2>
+                <div class="row text-center g-4">
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fab fa-react fa-3x mb-3"></i>
+                                <h5 class="card-title">React</h5>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- ArenaCamping-web -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <img src="assets/Arena.png" alt="ArenaCamping-web Preview">
-                            <div class="tech-stack">
-                                <i class="fab fa-js" title="JavaScript"></i>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h3>ArenaCamping-web</h3>
-                            <p>Aplicación web para gestionar reservas en campings.</p>
-                            <div class="card-actions">
-                                <a href="https://github.com/F3LIP3X/ArenaCamping-web" class="btn btn-primary">Ver Proyecto</a>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fab fa-js fa-3x mb-3"></i>
+                                <h5 class="card-title">TypeScript</h5>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- MongoDB-Spring-Maven -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <img src="assets/mdb-s-m.jpg" alt="MongoDB-Spring-Maven Preview">
-                            <div class="tech-stack">
-                                <i class="fab fa-java" title="Java"></i>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h3>MongoDB-Spring-Maven</h3>
-                            <p>Proyecto MVC con Spring Boot y MongoDB.</p>
-                            <div class="card-actions">
-                                <a href="https://github.com/F3LIP3X/MongoDB-Spring-Maven" class="btn btn-primary">Ver Proyecto</a>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fab fa-node fa-3x mb-3"></i>
+                                <h5 class="card-title">NodeJs</h5>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- FlappyGame -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <img src="assets/flappy.png" alt="FlappyGame Preview">
-                            <div class="tech-stack">
-                                <i class="fab fa-java" title="Java"></i>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fab fa-docker fa-3x mb-3"></i>
+                                <h5 class="card-title">Docker</h5>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <h3>FlappyGame</h3>
-                            <p>Juego tipo Flappy Bird desarrollado en Android Studio.</p>
-                            <div class="card-actions">
-                                <a href="https://github.com/F3LIP3X/FlappyGame" class="btn btn-primary">Ver Proyecto</a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fab fa-css3 fa-3x mb-3"></i>
+                                <h5 class="card-title">Tailwind/Bootstrap</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fas fa-database fa-3x mb-3"></i>
+                                <h5 class="card-title">MySQL/MongoDB</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fab fa-php fa-3x mb-3"></i>
+                                <h5 class="card-title">PHP/Laravel</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fab fa-java fa-3x mb-3"></i>
+                                <h5 class="card-title">Java</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fab fa-python fa-3x mb-3"></i>
+                                <h5 class="card-title">Python</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fab fa-github fa-3x mb-3"></i>
+                                <h5 class="card-title">GitHub</h5>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Proyectos Destacados</h2>
+                <div class="row g-4">
+                    <!-- STEMFounding -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card">
+                            <div class="project-image-container">
+                                <img src="assets/Laravel.png" alt="Vista previa de STEMFounding">
+                                <div class="tech-stack">
+                                    <i class="fab fa-php" title="PHP"></i>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h3>STEMFounding</h3>
+                                <p>Project manager hecho con Laravel durante el segundo trimestre del DAM en STEM Granada.</p>
+                                <div class="card-actions">
+                                    <a href="https://github.com/F3LIP3X/STEMFounding" class="btn btn-primary">Ver Proyecto</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ArenaCamping-web -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card">
+                            <div class="project-image-container">
+                                <img src="assets/Arena.png" alt="Vista previa de ArenaCamping-web">
+                                <div class="tech-stack">
+                                    <i class="fab fa-js" title="JavaScript"></i>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h3>ArenaCamping-web</h3>
+                                <p>Aplicación web para gestionar reservas en campings.</p>
+                                <div class="card-actions">
+                                    <a href="https://github.com/F3LIP3X/ArenaCamping-web" class="btn btn-primary">Ver Proyecto</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MongoDB-Spring-Maven -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card">
+                            <div class="project-image-container">
+                                <img src="assets/mdb-s-m.jpg" alt="Vista previa de MongoDB-Spring-Maven">
+                                <div class="tech-stack">
+                                    <i class="fab fa-java" title="Java"></i>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h3>MongoDB-Spring-Maven</h3>
+                                <p>Proyecto MVC con Spring Boot y MongoDB.</p>
+                                <div class="card-actions">
+                                    <a href="https://github.com/F3LIP3X/MongoDB-Spring-Maven" class="btn btn-primary">Ver Proyecto</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FlappyGame -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card">
+                            <div class="project-image-container">
+                                <img src="assets/flappy.png" alt="Vista previa de FlappyGame">
+                                <div class="tech-stack">
+                                    <i class="fab fa-java" title="Java"></i>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h3>FlappyGame</h3>
+                                <p>Juego tipo Flappy Bird desarrollado en Android Studio.</p>
+                                <div class="card-actions">
+                                    <a href="https://github.com/F3LIP3X/FlappyGame" class="btn btn-primary">Ver Proyecto</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Contacto -->
     <section id="contact" class="py-5">
