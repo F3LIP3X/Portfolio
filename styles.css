@@ -178,6 +178,11 @@ body {
     font-size: 1.1rem;
 }
 
+/* Ajuste para el scroll offset */
+section {
+    scroll-margin-top: 80px; /* Ajusta este valor según la altura de tu navbar */
+}
+
 /* ...existing code... */
 
 #contact form {
@@ -453,23 +458,24 @@ html {
 }
 
 .experience-card {
+    height: 100%;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     padding: 2rem;
-    height: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .experience-card:hover {
     transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .experience-card .card-title {
+    font-size: 1.4rem;
     color: var(--primary-color);
-    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
@@ -485,7 +491,8 @@ html {
 .experience-card ul li {
     position: relative;
     padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
 }
 
@@ -631,6 +638,160 @@ html {
 
 .project-card:hover .project-image-container img {
     transform: scale(1.05);
+}
+
+/* Education Section */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+}
+
+.education-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.education-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.education-card .institution {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.education-card .year {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Ajusta la animación para las tres columnas */
+.animate__fadeIn {
+    animation-duration: 0.8s;
+}
+
+.animate__fadeInLeft {
+    animation-duration: 0.8s;
+    animation-delay: 0.2s;
+}
+
+.animate__fadeInRight {
+    animation-duration: 0.8s;
+    animation-delay: 0.4s;
+}
+
+.institution-img {
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.education-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Education Section Enhancements */
+.education-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    height: 100%;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.education-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.institution-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    border: 3px solid var(--primary-color);
+    padding: 3px;
+    background: var(--dark-color);
+    transition: transform 0.3s ease;
+}
+
+.education-card:hover .institution-img {
+    transform: scale(1.1);
+}
+
+.education-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Passion One', sans-serif;
+}
+
+.education-card .institution {
+    color: var(--light-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-card .year {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+/* ...existing code... */
+
+.btn-download {
+    background: var(--accent-color);
+    color: var(--light-color);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-download:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+    color: var(--light-color);
+    text-decoration: none;
+}
+
+.btn-download i {
+    font-size: 1.2rem;
 }
 
 /* ...existing code... */
