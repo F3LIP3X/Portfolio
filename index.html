@@ -53,10 +53,48 @@
                 </ul>
             </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
+    </nav> <!-- Hero Section -->
     <section id="hero" class="d-flex align-items-center text-center">
+        <!-- Animated Background Elements -->
+        <div class="hero-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="hero-grid"></div> <!-- Floating skill icons -->
+        <div class="floating-skills">
+            <div class="floating-skill"><i class="fab fa-react"></i></div>
+            <div class="floating-skill"><i class="fab fa-js"></i></div>
+            <div class="floating-skill"><i class="fab fa-node"></i></div>
+            <div class="floating-skill"><i class="fab fa-angular"></i></div>
+            <div class="floating-skill"><i class="fab fa-php"></i></div>
+            <div class="floating-skill"><i class="fab fa-laravel"></i></div>
+            <div class="floating-skill"><i class="fab fa-docker"></i></div>
+            <div class="floating-skill"><i class="fab fa-github"></i></div>
+            <div class="floating-skill"><i class="fab fa-wordpress"></i></div>
+            <div class="floating-skill"><i class="fas fa-database"></i></div>
+        </div>
+
+        <div class="code-animation">
+            <div class="code-lines">
+                const developer = {<br>
+                &nbsp;&nbsp;name: "Felipe Toledano",<br>
+                &nbsp;&nbsp;role: "Front-end Developer",<br>
+                &nbsp;&nbsp;skills: ["React", "TypeScript", "Node.js"],<br>
+                &nbsp;&nbsp;passion: "Creating amazing user experiences",<br>
+                &nbsp;&nbsp;location: "Granada, España"<br>
+                };<br><br>
+                function buildAmazingProjects() {<br>
+                &nbsp;&nbsp;return developer.skills.map(skill => {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return `Building with ${skill}`;<br>
+                &nbsp;&nbsp;});<br>
+                }<br><br>
+                console.log("Welcome to my portfolio!");
+            </div>
+        </div>
+
         <div class="container">
             <h1 class="animate__animated animate__fadeInDown">
                 <span class="d-block">Hola, soy Felipe Toledano</span>
@@ -68,7 +106,8 @@
             <div class="d-flex justify-content-center gap-3 animate__animated animate__fadeInUp">
                 <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
                 <a href="#contact" class="btn btn-outline-primary">Contactar</a>
-                <a href="./assets/CV_Felipe_Toledano.pdf" class="btn btn-success animate__animated animate__pulse animate__infinite" download>
+                <a href="./assets/CV_Felipe_Toledano.pdf"
+                    class="btn btn-success animate__animated animate__pulse animate__infinite" download>
                     <i class="fas fa-download me-2"></i>Descargar CV
                 </a>
             </div>
@@ -82,113 +121,219 @@
                 <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Sobre Mí</h2>
                 <div class="row align-items-center">
                     <div class="col-md-4 text-center text-md-start">
-                        <img src="./assets/archivo18.jpg" alt="Foto de Felipe Toledano" class="about-img animate__animated animate__fadeIn">
+                        <img src="./assets/archivo18.jpg" alt="Foto de Felipe Toledano"
+                            class="about-img animate__animated animate__fadeIn">
                     </div>
                     <div class="col-md-8">
                         <div class="about-content text-md-start">
                             <p class="animate__animated animate__fadeInUp">
-                                Soy un desarrollador Full Stack Junior. Me especializo en el desarrollo
+                                Soy un desarrollador Front-end Junior. Me especializo en el desarrollo
                                 de aplicaciones web modernas y eficientes, combinando tecnologías front-end y back-end.
                             </p>
                             <p class="animate__animated animate__fadeInUp">
-                                Mi formación en Desarrollo de Aplicaciones Multiplataforma (DAM) y Desarrollo de Aplicaciones Web (DAW) me ha proporcionado una sólida base
-                                en programación y arquitectura de software. Me apasiona especialmente el desarrollo front-end,
-                                donde puedo combinar mi creatividad con mis habilidades técnicas para crear interfaces intuitivas
+                                Mi formación en Desarrollo de Aplicaciones Multiplataforma (DAM) y Desarrollo de
+                                Aplicaciones Web (DAW) me ha proporcionado una sólida base
+                                en programación y arquitectura de software. Me apasiona especialmente el desarrollo
+                                front-end,
+                                donde puedo combinar mi creatividad con mis habilidades técnicas para crear interfaces
+                                intuitivas
                                 y atractivas.
                             </p>
                             <p class="animate__animated animate__fadeInUp">
-                                Actualmente, me encuentro expandiendo mis conocimientos en tecnologías como React, Node.js y bases
-                                de datos tanto SQL como NoSQL. Mi objetivo es crear soluciones que no solo funcionen bien, sino que
+                                Actualmente, me encuentro expandiendo mis conocimientos en tecnologías como React,
+                                Node.js y bases
+                                de datos tanto SQL como NoSQL. Mi objetivo es crear soluciones que no solo funcionen
+                                bien, sino que
                                 también proporcionen una excelente experiencia de usuario.
                             </p>
                             <p class="animate__animated animate__fadeInUp">
                                 Durante mi formación, he adquirido experiencia en:
-                                <ul class="learning-list">
-                                    <li>Desarrollo web full-stack con tecnologías modernas</li>
-                                    <li>Implementación de APIs RESTful</li>
-                                    <li>Diseño y gestión de bases de datos</li>
-                                    <li>Control de versiones y metodologías ágiles</li>
-                                    <li>Desarrollo de aplicaciones móviles nativas</li>
-                                </ul>
+                            <ul class="learning-list">
+                                <li>Desarrollo web full-stack con tecnologías modernas</li>
+                                <li>Implementación de APIs RESTful</li>
+                                <li>Diseño y gestión de bases de datos</li>
+                                <li>Control de versiones y metodologías ágiles</li>
+                                <li>Desarrollo de aplicaciones móviles nativas</li>
+                            </ul>
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Nueva sección de Educación -->
+        </section> <!-- Nueva sección de Educación -->
         <section id="education" class="py-5">
             <div class="container">
                 <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Educación</h2>
                 <div class="row g-4">
                     <div class="col-md-4 animate__animated animate__fadeInLeft">
                         <div class="education-card">
-                            <img src="./assets/institutions/stem.png" alt="Logo de STEM Granada" class="institution-img mb-3">
-                            <h3>Desarrollo de Aplicaciones Web</h3>
-                            <p class="institution">STEM Granada</p>
-                            <p class="year">2024</p>
+                            <img src="./assets/institutions/stem.png" alt="Logo de Escuela STEM Granada"
+                                class="institution-img mb-3">
+                            <h3>Grado Superior en Desarrollo de Aplicaciones Web</h3>
+                            <p class="institution">Escuela STEM Granada</p>
+                            <p class="degree-type">Informática</p>
+                            <p class="year">Sept. 2024</p>
                         </div>
                     </div>
                     <div class="col-md-4 animate__animated animate__fadeIn">
                         <div class="education-card">
-                            <img src="./assets/institutions/medac.jpg" alt="Logo de Medac Nevada" class="institution-img mb-3">
-                            <h3>Desarrollo de Aplicaciones Multiplataforma</h3>
-                            <p class="institution">Medac Nevada</p>
-                            <p class="year">2023</p>
+                            <img src="./assets/institutions/medac.jpg" alt="Logo de MEDAC" class="institution-img mb-3">
+                            <h3>Ciclo Formativo de Grado Superior</h3>
+                            <p class="institution">MEDAC</p>
+                            <p class="degree-type">Desarrollo de Aplicaciones Multiplataforma</p>
+                            <p class="year">Sept. 2022 - Jul. 2024</p>
                         </div>
                     </div>
                     <div class="col-md-4 animate__animated animate__fadeInRight">
                         <div class="education-card">
-                            <img src="./assets/institutions/hlanz.jpg" alt="Logo de IES Hermenegildo Lanz" class="institution-img mb-3">
-                            <h3>Sistemas Microinformáticos y Redes</h3>
-                            <p class="institution">IES Hermenegildo Lanz</p>
-                            <p class="year">2021</p>
+                            <img src="./assets/institutions/hlanz.jpg" alt="Logo de IES Politécnico Hermenegildo Lanz"
+                                class="institution-img mb-3">
+                            <h3>Ciclo Formativo de Grado Medio</h3>
+                            <p class="institution">IES Politécnico Hermenegildo Lanz</p>
+                            <p class="degree-type">Sistemas Microinformáticos y Redes</p>
+                            <p class="year">Sept. 2020 - Jun. 2021</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Experiencia -->
+        </section><!-- Experiencia -->
         <section id="experience" class="py-5">
             <div class="container">
                 <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Experiencia</h2>
                 <div class="row g-4">
-                    <div class="col-md-4 animate__animated animate__fadeInLeft">
-                        <div class="experience-card">
-                            <h3 class="card-title">Junior Front Developer</h3>
-                            <p><strong>Arena Pro Gaming</strong> | Abril - Junio 2024</p>
-                            <ul>
-                                <li>Desarrollo de aplicaciones web con React y Node.js</li>
-                                <li>Control de versiones con Git y GitHub</li>
-                                <li>Diseño de interfaces con Tailwind CSS</li>
-                                <li>Trabajo en equipo y metodologías ágiles</li>
-                            </ul>
+                    <!-- Puesto actual - Hiberus Full-time -->
+                    <div class="col-12 animate__animated animate__fadeIn">
+                        <div class="experience-card current-position">
+                            <div class="row align-items-center">
+                                <div class="col-md-2 text-center">
+                                    <img src="./assets/hiberus_logo.jpg" alt="Logo de Hiberus"
+                                        class="company-logo mb-3">
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="position-header">
+                                        <h3 class="card-title">Desarrollador de Front-end</h3>
+                                        <span class="job-type">Jornada completa</span>
+                                    </div>
+                                    <p class="company-info"><strong>Hiberus</strong> | Jun. 2025 - Actualidad · 1 mes |
+                                        Granada, Andalucía, España | <span class="work-mode">Híbrido</span></p>
+                                    <p class="position-description">
+                                        Formo parte del equipo de desarrollo en una de las empresas tecnológicas líderes
+                                        a nivel nacional,
+                                        participando en proyectos de consultoría tecnológica, programación y soluciones
+                                        digitales.
+                                    </p>
+                                    <div class="skills-tags">
+                                        <span class="badge bg-primary me-1 mb-1">PHP</span>
+                                        <span class="badge bg-primary me-1 mb-1">Desarrollo Front-end</span>
+                                        <span class="badge bg-primary me-1 mb-1">Gutenberg blocks</span>
+                                        <span class="badge bg-primary me-1 mb-1">AJAX</span>
+                                        <span class="badge bg-primary me-1 mb-1">HTML</span>
+                                        <span class="badge bg-primary me-1 mb-1">React.js</span>
+                                        <span class="badge bg-primary me-1 mb-1">GitLab</span>
+                                        <span class="badge bg-primary me-1 mb-1">Bitbucket</span>
+                                        <span class="badge bg-primary me-1 mb-1">SCSS</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4 animate__animated animate__fadeIn">
+
+                    <!-- Prácticas en Hiberus -->
+                    <div class="col-md-6 animate__animated animate__fadeInLeft">
                         <div class="experience-card">
-                            <h3 class="card-title">Desarrollador WordPress</h3>
-                            <p><strong>Ruiz Lara & Asociados</strong> | Enero - Marzo 2023</p>
-                            <ul>
-                                <li>Desarrollo y mantenimiento de sitios web</li>
-                                <li>Personalización de temas WordPress</li>
-                                <li>Optimización SEO y rendimiento</li>
-                                <li>Integración de plugins y funcionalidades</li>
-                            </ul>
+                            <div class="position-header">
+                                <h3 class="card-title">Consultor Junior</h3>
+                                <span class="job-type internship">Contrato de prácticas</span>
+                            </div>
+                            <p class="company-info"><strong>Hiberus</strong> | Mar. 2025 - Jun. 2025 · 4 meses |
+                                Granada, Andalucía, España | <span class="work-mode">Presencial</span></p>
+                            <p class="position-description">
+                                Desarrollador Frontend especializado en la creación de componentes Gutenberg para
+                                WordPress,
+                                utilizando React y React Vite, e integrándolos en un entorno ágil con metodología Scrum.
+                                Experiencia en el desarrollo con PHP, AJAX y Angular, así como en tareas de diseño
+                                utilizando Figma.
+                                Participación activa en reuniones diarias (dailys) dentro del sector de banca y seguros.
+                            </p>
+                            <div class="skills-tags">
+                                <span class="badge bg-secondary me-1 mb-1">React.js</span>
+                                <span class="badge bg-secondary me-1 mb-1">Vite</span>
+                                <span class="badge bg-secondary me-1 mb-1">Buenas prácticas</span>
+                                <span class="badge bg-secondary me-1 mb-1">AngularJS</span>
+                                <span class="badge bg-secondary me-1 mb-1">AJAX</span>
+                                <span class="badge bg-secondary me-1 mb-1">PHP</span>
+                                <span class="badge bg-secondary me-1 mb-1">Accesibilidad</span>
+                                <span class="badge bg-secondary me-1 mb-1">Accesibilidad digital</span>
+                                <span class="badge bg-secondary me-1 mb-1">Gutenberg Blocks</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4 animate__animated animate__fadeInRight">
+
+                    <!-- Ruiz Lara & Asociados -->
+                    <div class="col-md-6 animate__animated animate__fadeInRight">
                         <div class="experience-card">
-                            <h3 class="card-title">Técnico Informático</h3>
-                            <p><strong>Universidad de Relaciones Laborales</strong> | Abril - Junio 2022</p>
-                            <ul>
-                                <li>Mantenimiento y optimización de sistemas</li>
-                                <li>Soporte técnico y resolución de incidencias</li>
-                                <li>Gestión de redes y servidores</li>
-                                <li>Documentación y procedimientos técnicos</li>
-                            </ul>
+                            <div class="position-header">
+                                <h3 class="card-title">Desarrollador de Front-end</h3>
+                                <span class="job-type part-time">Alumno en Prácticas</span>
+                            </div>
+                            <p class="company-info"><strong>Ruiz Lara & Asociados</strong> | May. 2024 - Jun. 2024 · 2
+                                meses | Granada, Andalucía, España | <span class="work-mode">Presencial</span></p>
+                            <div class="skills-tags">
+                                <span class="badge bg-info me-1 mb-1">React.js</span>
+                                <span class="badge bg-info me-1 mb-1">Diseño de UI</span>
+                                <span class="badge bg-info me-1 mb-1">TypeScript</span>
+                                <span class="badge bg-info me-1 mb-1">Gestión de proyectos</span>
+                                <span class="badge bg-info me-1 mb-1">Diseño de interfaces web</span>
+                                <span class="badge bg-info me-1 mb-1">Tailwind CSS</span>
+                                <span class="badge bg-info me-1 mb-1">WordPress</span>
+                                <span class="badge bg-info me-1 mb-1">GitHub</span>
+                                <span class="badge bg-info me-1 mb-1">Desarrollo Front-end</span>
+                                <span class="badge bg-info me-1 mb-1">Elementor</span>
+                                <span class="badge bg-info me-1 mb-1">Supabase</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arena Pro Gaming -->
+                    <div class="col-md-6 animate__animated animate__fadeInLeft">
+                        <div class="experience-card">
+                            <div class="position-header">
+                                <h3 class="card-title">Programador Full Stack</h3>
+                                <span class="job-type">Alumno en Prácticas</span>
+                            </div>
+                            <p class="company-info"><strong>Arena Pro Gaming</strong> | Mar. 2024 - Abr. 2024 · 2 meses
+                                | Granada, Andalucía, España | <span class="work-mode">Presencial</span></p>
+                            <div class="skills-tags">
+                                <span class="badge bg-success me-1 mb-1">React.js</span>
+                                <span class="badge bg-success me-1 mb-1">Desarrollo web back-end</span>
+                                <span class="badge bg-success me-1 mb-1">JavaScript</span>
+                                <span class="badge bg-success me-1 mb-1">HTML</span>
+                                <span class="badge bg-success me-1 mb-1">Tailwind CSS</span>
+                                <span class="badge bg-success me-1 mb-1">Trabajo en equipo</span>
+                                <span class="badge bg-success me-1 mb-1">GitHub</span>
+                                <span class="badge bg-success me-1 mb-1">CSS</span>
+                                <span class="badge bg-success me-1 mb-1">Desarrollo Front-end</span>
+                                <span class="badge bg-success me-1 mb-1">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Universidad Granada -->
+                    <div class="col-md-6 animate__animated animate__fadeInRight">
+                        <div class="experience-card">
+                            <div class="position-header">
+                                <h3 class="card-title">Técnico Informático en Prácticas</h3>
+                                <span class="job-type internship">Alumno en Prácticas</span>
+                            </div>
+                            <p class="company-info"><strong>Universidad Granada Relaciones Laborales y Recursos
+                                    Humanos</strong> | Abr. 2021 - Jun. 2021 · 3 meses | Granada, Andalucía, España |
+                                <span class="work-mode">Presencial</span></p>
+                            <div class="skills-tags">
+                                <span class="badge bg-warning me-1 mb-1">Servicios administrados</span>
+                                <span class="badge bg-warning me-1 mb-1">Ofimática</span>
+                                <span class="badge bg-warning me-1 mb-1">Fotografía</span>
+                                <span class="badge bg-warning me-1 mb-1">Gestión documental</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -291,8 +436,80 @@
                     <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
                         <div class="card skill-card">
                             <div class="card-body">
-                                <i class="fas fa-puzzle-piece fa-3x mb-3"></i>
-                                <h5 class="card-title">Elementor</h5>
+                                <i class="fab fa-angular fa-3x mb-3"></i>
+                                <h5 class="card-title">Angular</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fas fa-code fa-3x mb-3"></i>
+                                <h5 class="card-title">AJAX</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fab fa-figma fa-3x mb-3"></i>
+                                <h5 class="card-title">Figma</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fab fa-sass fa-3x mb-3"></i>
+                                <h5 class="card-title">SCSS/Sass</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fas fa-database fa-3x mb-3"></i>
+                                <h5 class="card-title">PostgreSQL</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fas fa-bolt fa-3x mb-3"></i>
+                                <h5 class="card-title">Vite</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fab fa-gitlab fa-3x mb-3"></i>
+                                <h5 class="card-title">GitLab</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fab fa-bitbucket fa-3x mb-3"></i>
+                                <h5 class="card-title">Bitbucket</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fas fa-cubes fa-3x mb-3"></i>
+                                <h5 class="card-title">Gutenberg</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
+                        <div class="card skill-card">
+                            <div class="card-body">
+                                <i class="fab fa-laravel fa-3x mb-3"></i>
+                                <h5 class="card-title">Laravel</h5>
                             </div>
                         </div>
                     </div>
@@ -316,9 +533,11 @@
                             </div>
                             <div class="card-body">
                                 <h3>STEMFounding</h3>
-                                <p>Project manager hecho con Laravel durante el segundo trimestre del DAM en STEM Granada.</p>
+                                <p>Project manager hecho con Laravel durante el segundo trimestre del DAM en STEM
+                                    Granada.</p>
                                 <div class="card-actions">
-                                    <a href="https://github.com/F3LIP3X/STEMFounding" class="btn btn-primary">Ver Proyecto</a>
+                                    <a href="https://github.com/F3LIP3X/STEMFounding" class="btn btn-primary"
+                                        target="_blank">Ver Proyecto</a>
                                 </div>
                             </div>
                         </div>
@@ -337,7 +556,8 @@
                                 <h3>ArenaCamping-web</h3>
                                 <p>Aplicación web para gestionar reservas en campings.</p>
                                 <div class="card-actions">
-                                    <a href="https://github.com/F3LIP3X/ArenaCamping-web" class="btn btn-primary">Ver Proyecto</a>
+                                    <a href="https://github.com/F3LIP3X/ArenaCamping-web" class="btn btn-primary"
+                                        target="_blank">Ver Proyecto</a>
                                 </div>
                             </div>
                         </div>
@@ -356,7 +576,8 @@
                                 <h3>MongoDB-Spring-Maven</h3>
                                 <p>Proyecto MVC con Spring Boot y MongoDB.</p>
                                 <div class="card-actions">
-                                    <a href="https://github.com/F3LIP3X/MongoDB-Spring-Maven" class="btn btn-primary">Ver Proyecto</a>
+                                    <a href="https://github.com/F3LIP3X/MongoDB-Spring-Maven" class="btn btn-primary"
+                                        target="_blank">Ver Proyecto</a>
                                 </div>
                             </div>
                         </div>
@@ -375,7 +596,8 @@
                                 <h3>FlappyGame</h3>
                                 <p>Juego tipo Flappy Bird desarrollado en Android Studio.</p>
                                 <div class="card-actions">
-                                    <a href="https://github.com/F3LIP3X/FlappyGame" class="btn btn-primary">Ver Proyecto</a>
+                                    <a href="https://github.com/F3LIP3X/FlappyGame" class="btn btn-primary"
+                                        target="_blank">Ver Proyecto</a>
                                 </div>
                             </div>
                         </div>
@@ -408,11 +630,69 @@
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Felipe Toledano. Todos los derechos reservados.</p>
-    </footer>
-
-    <!-- Bootstrap JS -->
+        <p>&copy;
+            <script>document.write(new Date().getFullYear())</script> Felipe Toledano. Todos los derechos reservados.
+        </p>
+    </footer> <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript for scroll animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function handleNavbarScroll() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
+
+            function handleHeroScroll() {
+                const heroContainer = document.querySelector('#hero .container');
+                if (!heroContainer) return;
+
+                const scrollY = window.scrollY;
+                const heroHeight = document.querySelector('#hero').offsetHeight;
+
+                const scrollProgress = Math.min(scrollY / (heroHeight * 0.5), 1);
+
+                const translateY = scrollProgress * 50;
+                const opacity = Math.max(0.3, 1 - (scrollProgress * 0.7));
+                const scale = Math.max(0.9, 1 - (scrollProgress * 0.1));
+
+                heroContainer.style.transform = `translateY(${translateY}px) scale(${scale})`;
+                heroContainer.style.opacity = opacity;
+            }
+
+            function handleScroll() {
+                handleNavbarScroll();
+                handleHeroScroll();
+            }
+
+            window.addEventListener('scroll', handleScroll);
+
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate__fadeInUp');
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('section:not(#hero)');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            handleScroll();
+        });
+    </script>
 </body>
 
 </html>
