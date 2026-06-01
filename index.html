@@ -206,6 +206,42 @@
             <div class="container">
                 <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Experiencia</h2>
                 <div class="row g-4">
+                    <!-- Puesto actual - QUANTIA Full-time -->
+                    <div class="col-12 animate__animated animate__fadeIn">
+                        <div class="experience-card current-position">
+                            <div class="row align-items-center">
+                                <div class="col-md-2 text-center">
+                                    <div class="company-logo-placeholder mb-3 d-flex align-items-center justify-content-center"
+                                        style="width:80px;height:80px;background:#c8ff00;border-radius:8px;margin:0 auto;font-weight:700;font-size:1.1rem;color:#000;">
+                                        QIA
+                                    </div>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="position-header">
+                                        <h3 class="card-title">Programador Full Stack</h3>
+                                        <span class="job-type">Jornada completa</span>
+                                    </div>
+                                    <p class="company-info">
+                                        <strong>QUANTIA Ingeniería y Consultoría</strong> |
+                                        Jun. 2026 - actualidad · <span id="quantia-duration"></span> |
+                                        Granada | <span class="work-mode">Híbrido</span>
+                                    </p>
+                                    <p class="position-description">
+                                        Desarrollo de aplicaciones web con React + Vite en el frontend
+                                        y NestJS en el backend, construyendo soluciones escalables y
+                                        orientadas a resultados para los proyectos de la empresa.
+                                    </p>
+                                    <div class="skills-tags">
+                                        <span class="badge bg-primary me-1 mb-1">React.js</span>
+                                        <span class="badge bg-primary me-1 mb-1">Vite</span>
+                                        <span class="badge bg-primary me-1 mb-1">NestJS</span>
+                                        <span class="badge bg-primary me-1 mb-1">TypeScript</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Puesto actual - Hiberus Full-time -->
                     <div class="col-12 animate__animated animate__fadeIn">
                         <div class="experience-card current-position">
@@ -844,6 +880,24 @@
 
             handleScroll();
         });
+    </script>
+    <script>
+    (function() {
+        var start = new Date('2026-06-01');
+        var now = new Date();
+        var days = Math.floor((now - start) / (1000 * 60 * 60 * 24));
+        var months = Math.floor(days / 30.44);
+        var text;
+        if (days < 30) {
+            text = days === 1 ? '1 día' : days + ' días';
+        } else if (months === 1) {
+            text = '1 mes';
+        } else {
+            text = months + ' meses';
+        }
+        var el = document.getElementById('quantia-duration');
+        if (el) el.textContent = text;
+    })();
     </script>
 </body>
 
