@@ -41,9 +41,11 @@
         <div class="orb orb-4"></div>
     </div>
 
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
     <!-- Navegación -->
     <nav class="nav" id="nav" aria-label="Navegación principal">
-        <a class="brand" href="#hero"><span class="dot"></span>Felipe Toledano</a>
+        <a class="brand" href="#hero"><span class="dot"></span><span class="name">Felipe Toledano</span></a>
 
         <ul class="nav-links" id="navLinks">
             <li><a href="#about">Sobre mí</a></li>
@@ -67,46 +69,28 @@
     <!-- Hero -->
     <header id="hero">
         <div class="wrap hero-inner">
-            <span class="eyebrow reveal"><span class="live"></span>Disponible para nuevos retos</span>
+            <span class="eyebrow reveal r-soft"><span class="live"></span>Full Stack · React &amp; NestJS · Granada</span>
 
-            <h1 class="hero-title reveal" style="--d:80ms">
+            <h1 class="hero-title reveal r-soft" style="--d:170ms">
                 Hola, soy Felipe
                 <span class="line-2">Full Stack Developer</span>
             </h1>
 
-            <p class="hero-lead reveal" style="--d:160ms">
+            <p class="hero-lead reveal" style="--d:260ms">
                 Construyo interfaces rápidas, accesibles y cuidadas al detalle.
-                React, Angular y Vue en el front; NestJS, Laravel y Spring en el back. Desde Granada.
+                React, Angular y Vue en el front; NestJS, Laravel y Spring en el back.
             </p>
 
-            <div class="hero-actions reveal" style="--d:240ms">
+            <div class="hero-actions reveal" style="--d:340ms">
                 <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-layer-group"></i>Ver proyectos</a>
                 <a href="#contact" class="btn"><i class="fa-regular fa-envelope"></i>Contactar</a>
-                <a href="./assets/CV_Felipe_Toledano.pdf" class="btn" download><i class="fa-solid fa-arrow-down"></i>Descargar CV</a>
+                <a href="./assets/CV_Felipe_Toledano.pdf?v=202608" class="btn" download><i class="fa-solid fa-arrow-down"></i>Descargar CV</a>
             </div>
 
-            <div class="hero-meta reveal" style="--d:320ms">
-                <span class="pill"><i class="fa-solid fa-location-dot"></i>Granada, España</span>
-                <span class="pill"><i class="fa-solid fa-briefcase"></i>QUANTIA · Full Stack</span>
-                <span class="pill"><i class="fa-solid fa-code"></i>React · NestJS · TypeScript</span>
-            </div>
-
-            <div class="glass code-card reveal" style="--d:400ms" aria-hidden="true">
-                <div class="code-bar">
-                    <span></span><span></span><span></span>
-                    <small>developer.ts</small>
-                </div>
-<pre><code><span class="tok-key">const</span> developer = {
-  name: <span class="tok-str">"Felipe Toledano"</span>,
-  role: <span class="tok-str">"Full Stack Developer"</span>,
-  stack: [<span class="tok-str">"React"</span>, <span class="tok-str">"TypeScript"</span>, <span class="tok-str">"NestJS"</span>],
-  location: <span class="tok-str">"Granada, España"</span>
-};
-
-<span class="tok-key">function</span> <span class="tok-fn">build</span>() {
-  <span class="tok-key">return</span> developer.stack.<span class="tok-fn">map</span>(s =&gt; <span class="tok-str">`Building with ${s}`</span>);
-}
-<span class="tok-com">// console.log("Welcome to my portfolio!")</span></code></pre>
+            <div class="hero-meta" data-stagger="70">
+                <span class="pill pop"><i class="fa-solid fa-location-dot"></i>Granada, España</span>
+                <span class="pill pop"><i class="fa-solid fa-briefcase"></i>QUANTIA · Full Stack</span>
+                <span class="pill pop"><i class="fa-solid fa-rocket"></i>MVPs de producto end-to-end</span>
             </div>
 
             <div class="scroll-hint" aria-hidden="true">
@@ -127,12 +111,17 @@
                 </div>
 
                 <div class="about-grid">
-                    <figure class="glass about-photo reveal">
-                        <img src="./assets/archivo18.jpg" alt="Retrato de Felipe Toledano" loading="lazy" width="640" height="800">
+                    <figure class="glass about-photo reveal r-left">
+                        <img src="./assets/archivo18.jpg" alt="Retrato de Felipe Toledano" loading="lazy" width="480" height="480">
                         <figcaption>Felipe Toledano · Granada</figcaption>
+                        <div class="mini-links">
+                            <a href="https://github.com/F3LIP3X" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/felipe-jos%C3%A9-toledano-escudero-4008bb194/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="mailto:Felitol2008@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                        </div>
                     </figure>
 
-                    <div class="glass about-card reveal" style="--d:100ms">
+                    <div class="glass about-card reveal r-right" style="--d:120ms">
                         <p>
                             Soy desarrollador Full Stack. Me especializo en aplicaciones web modernas y eficientes,
                             combinando tecnologías front-end y back-end.
@@ -159,7 +148,7 @@
                         <div class="stat-row">
                             <div class="glass stat"><b id="statYears">+1</b><span>Años de experiencia</span></div>
                             <div class="glass stat"><b>30</b><span>Tecnologías</span></div>
-                            <div class="glass stat"><b>6</b><span>Proyectos públicos</span></div>
+                            <div class="glass stat"><b>8</b><span>Proyectos destacados</span></div>
                         </div>
                     </div>
                 </div>
@@ -222,6 +211,7 @@
                                     <h3>Programador Full Stack</h3>
                                     <span class="tag live">Actualidad</span>
                                     <span class="tag">Jornada completa</span>
+                                    <span class="tag alt">I+D → Cliente</span>
                                 </div>
                                 <p class="exp-meta">
                                     <strong>QUANTIA Ingeniería y Consultoría</strong>
@@ -231,12 +221,63 @@
                                     <span class="sep">·</span> Híbrido
                                 </p>
                                 <p>
-                                    Desarrollo de aplicaciones web con React + Vite en el frontend y NestJS en el
-                                    backend, construyendo soluciones escalables y orientadas a resultados.
+                                    Desarrollo de aplicaciones web a medida de extremo a extremo: interfaces con
+                                    <strong>React + Vite + TypeScript</strong> y APIs REST con <strong>NestJS</strong>,
+                                    dentro de los proyectos de ingeniería y consultoría de la empresa.
+                                    Empecé en el equipo de <strong>desarrollo de producto (I+D)</strong> y actualmente
+                                    trabajo <strong>asignado a cliente</strong>.
                                 </p>
-                                <div class="chips">
-                                    <span class="chip">React.js</span><span class="chip">Vite</span>
-                                    <span class="chip">NestJS</span><span class="chip">TypeScript</span>
+                                <ul class="learn-list" data-stagger="80">
+                                    <li class="pop"><i class="fa-solid fa-check"></i>Plataforma que automatiza la gestión de clientes, pólizas y documentos: front con React + Vite + Tailwind y backend de microservicios con NestJS.</li>
+                                    <li class="pop"><i class="fa-solid fa-check"></i>Desarrollo de producto en I+D: construcción de la plataforma interna desde cero, prototipado y validación de nuevas funcionalidades.</li>
+                                    <li class="pop"><i class="fa-solid fa-check"></i>Incorporación a proyecto de cliente, adaptándome a su equipo, su código y sus procesos de entrega.</li>
+                                    <li class="pop"><i class="fa-solid fa-check"></i>Diseño e implementación de APIs REST en NestJS: controladores, servicios, DTOs, validación y autenticación con JWT por roles.</li>
+                                    <li class="pop"><i class="fa-solid fa-check"></i>Modelado y consulta de datos con ORM sobre base de datos relacional, incluidas migraciones y optimización de consultas.</li>
+                                    <li class="pop"><i class="fa-solid fa-check"></i>Arquitectura front por componentes reutilizables, enrutado, gestión de estado y consumo de API con manejo de errores y estados de carga.</li>
+                                    <li class="pop"><i class="fa-solid fa-check"></i>Desarrollo constante de MVPs para clientes de alto nivel, con entregas rápidas e iteración continua sobre feedback real.</li>
+                                    <li class="pop"><i class="fa-solid fa-check"></i>Trabajo en equipo con Git, revisiones de código, ramas por funcionalidad y metodologías ágiles (Scrum).</li>
+                                </ul>
+                                <div class="chips" data-stagger="45">
+                                    <span class="chip pop">React.js</span><span class="chip pop">Vite</span>
+                                    <span class="chip pop">TypeScript</span><span class="chip pop">NestJS</span>
+                                    <span class="chip pop">Node.js</span><span class="chip pop">API REST</span>
+                                    <span class="chip pop">JWT / Auth</span><span class="chip pop">ORM</span>
+                                    <span class="chip pop">SQL</span><span class="chip pop">Git</span>
+                                    <span class="chip pop">Figma</span><span class="chip pop">Scrum</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Freelance -->
+                    <article class="glass exp-card reveal" style="--d:80ms">
+                        <div class="exp-top">
+                            <div class="company-logo logo-fallback"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div class="exp-body">
+                                <div class="exp-head">
+                                    <h3>Full Stack Developer</h3>
+                                    <span class="tag alt">Freelance</span>
+                                </div>
+                                <p class="exp-meta">
+                                    <strong>Proyecto propio · CRM «Segures Task's»</strong>
+                                    <span class="sep">·</span> 2026 · 3 meses
+                                    <span class="sep">·</span> Remoto
+                                </p>
+                                <p>
+                                    CRM para corredurías de seguros que automatiza la gestión de clientes, pólizas y
+                                    documentación. Desarrollo integral y arquitectura de principio a fin.
+                                </p>
+                                <ul class="learn-list" data-stagger="80">
+                                    <li class="pop"><i class="fa-solid fa-check"></i>Aplicación de escritorio con Electron y TypeScript.</li>
+                                    <li class="pop"><i class="fa-solid fa-check"></i>Backend de microservicios con MongoDB y MinIO para el almacenamiento de imágenes y documentos.</li>
+                                    <li class="pop"><i class="fa-solid fa-check"></i>Infraestructura desplegada sobre Docker.</li>
+                                    <li class="pop"><i class="fa-solid fa-check"></i>Arquitectura y desarrollo apoyados en Claude Code.</li>
+                                </ul>
+                                <div class="chips" data-stagger="45">
+                                    <span class="chip pop">Electron</span><span class="chip pop">TypeScript</span>
+                                    <span class="chip pop">MongoDB</span><span class="chip pop">MinIO</span>
+                                    <span class="chip pop">Microservicios</span><span class="chip pop">Docker</span>
+                                    <span class="chip pop">Claude Code</span>
                                 </div>
                             </div>
                         </div>
@@ -250,26 +291,36 @@
                             </a>
                             <div class="exp-body">
                                 <div class="exp-head">
-                                    <h3>Desarrollador Front-end</h3>
+                                    <h3>Consultor Junior Full Stack</h3>
                                     <span class="tag">Jornada completa</span>
+                                    <span class="tag alt">Banca y seguros</span>
                                 </div>
                                 <p class="exp-meta">
-                                    <strong>Hiberus</strong>
-                                    <span class="sep">·</span> Jun. 2025 — Sep. 2025
+                                    <strong>Hiberus IT Development</strong>
+                                    <span class="sep">·</span> 2025 · 7 meses
                                     <span class="sep">·</span> Granada
                                     <span class="sep">·</span> Híbrido
                                 </p>
                                 <p>
-                                    Creación de componentes Gutenberg (WordPress) con React. Conocimientos sólidos en
-                                    PHP, AJAX y Angular, con implementación de diseños desde Figma. Colaboración en
-                                    proyectos Java en entornos Liferay y sistemas legacy, en banca y seguros.
+                                    Participación activa en el desarrollo integral de aplicaciones B2B y B2C para
+                                    clientes del sector banca y seguros.
                                 </p>
+                                <ul class="learn-list" data-stagger="80">
+                                    <li class="pop"><i class="fa-solid fa-check"></i><strong>Mapfre (B2B):</strong> infraestructura frontend con React y SASS, gestión de estados complejos con PHP/AJAX y cumplimiento de accesibilidad WCAG.</li>
+                                    <li class="pop"><i class="fa-solid fa-check"></i><strong>Fundación MAPFRE Canarias:</strong> aplicación web con React (Node 18) y bloques Gutenberg, optimización de memoria con Hooks y API en PHP protegida con JWT, en contacto directo con el cliente.</li>
+                                    <li class="pop"><i class="fa-solid fa-check"></i><strong>Funcionalidades B2C:</strong> integración de APIs externas y comunicación en tiempo real (chats y notificaciones).</li>
+                                    <li class="pop"><i class="fa-solid fa-check"></i><strong>App Angular &amp; i18n:</strong> arquitectura escalable multiidioma con traducción automática a 7 lenguajes.</li>
+                                    <li class="pop"><i class="fa-solid fa-check"></i><strong>Caser (Java legacy):</strong> mantenimiento de sistemas críticos, resolución de bugs y estabilidad del código.</li>
+                                    <li class="pop"><i class="fa-solid fa-check"></i><strong>DevOps:</strong> flujos CI/CD desde testing hasta despliegue en preproducción.</li>
+                                </ul>
                                 <div class="chips">
-                                    <span class="chip">PHP</span><span class="chip">Front-end</span>
-                                    <span class="chip">Gutenberg blocks</span><span class="chip">AJAX</span>
-                                    <span class="chip">HTML</span><span class="chip">React.js</span>
-                                    <span class="chip">GitLab</span><span class="chip">Bitbucket</span>
-                                    <span class="chip">SCSS</span>
+                                    <span class="chip">React.js</span><span class="chip">Angular</span>
+                                    <span class="chip">PHP</span><span class="chip">AJAX</span>
+                                    <span class="chip">Gutenberg blocks</span><span class="chip">SCSS/SASS</span>
+                                    <span class="chip">Java</span><span class="chip">JWT</span>
+                                    <span class="chip">i18n</span><span class="chip">WCAG</span>
+                                    <span class="chip">CI/CD</span><span class="chip">GitLab</span>
+                                    <span class="chip">Bitbucket</span>
                                 </div>
                             </div>
                         </div>
@@ -424,9 +475,41 @@
 
                 <div class="grid grid-3">
                     <article class="glass project reveal">
-                        <div class="project-media">
-                            <img src="assets/Laravel.png" alt="Vista previa de STEMFounding" loading="lazy">
-                            <div class="stack"><i class="fab fa-php" title="PHP / Laravel"></i></div>
+                        <div class="project-media media-gradient">
+                            <i class="fa-solid fa-people-arrows" aria-hidden="true"></i>
+                            <div class="stack">
+                                <i class="fab fa-react" title="React"></i>
+                                <i class="fab fa-laravel" title="Laravel"></i>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h3>SWORK — Matching laboral inteligente</h3>
+                            <p>TFG en STEM Granada. Arquitectura REST con React + Vite y Laravel, autenticación JWT,
+                                UI reutilizable con SCSS y lógica de recomendaciones sobre el modelo de datos.</p>
+                            <span class="tag alt" style="align-self:flex-start;margin-top:auto">Proyecto de Fin de Grado</span>
+                        </div>
+                    </article>
+
+                    <article class="glass project reveal">
+                        <div class="project-media media-gradient alt">
+                            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                            <div class="stack">
+                                <i class="fa-solid fa-desktop" title="Electron"></i>
+                                <i class="fas fa-database" title="MongoDB"></i>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h3>Segures Task's — CRM de seguros</h3>
+                            <p>CRM freelance para corredurías: gestión de clientes, pólizas y documentos. Electron +
+                                TypeScript, microservicios con MongoDB y MinIO, desplegado en Docker.</p>
+                            <span class="tag alt" style="align-self:flex-start;margin-top:auto">Freelance</span>
+                        </div>
+                    </article>
+
+                    <article class="glass project reveal">
+                        <div class="project-media media-gradient g3">
+                            <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+                            <div class="stack"><i class="fab fa-laravel" title="Laravel"></i><i class="fab fa-php" title="PHP"></i></div>
                         </div>
                         <div class="project-body">
                             <h3>STEMFounding</h3>
@@ -436,9 +519,9 @@
                     </article>
 
                     <article class="glass project reveal" style="--d:80ms">
-                        <div class="project-media">
-                            <img src="assets/Arena.png" alt="Vista previa de ArenaCamping-web" loading="lazy">
-                            <div class="stack"><i class="fab fa-js" title="JavaScript"></i></div>
+                        <div class="project-media media-gradient g4">
+                            <i class="fa-solid fa-caravan" aria-hidden="true"></i>
+                            <div class="stack"><i class="fab fa-react" title="React"></i><i class="fab fa-js" title="JavaScript"></i></div>
                         </div>
                         <div class="project-body">
                             <h3>ArenaCamping-web</h3>
@@ -448,9 +531,9 @@
                     </article>
 
                     <article class="glass project reveal" style="--d:160ms">
-                        <div class="project-media">
-                            <img src="assets/mdb-s-m.jpg" alt="Vista previa de MongoDB-Spring-Maven" loading="lazy">
-                            <div class="stack"><i class="fab fa-java" title="Java"></i></div>
+                        <div class="project-media media-gradient">
+                            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+                            <div class="stack"><i class="fab fa-java" title="Java"></i><i class="fas fa-database" title="MongoDB"></i></div>
                         </div>
                         <div class="project-body">
                             <h3>MongoDB-Spring-Maven</h3>
@@ -460,8 +543,8 @@
                     </article>
 
                     <article class="glass project reveal">
-                        <div class="project-media">
-                            <img src="assets/flappy.png" alt="Vista previa de FlappyGame" loading="lazy">
+                        <div class="project-media media-gradient alt">
+                            <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
                             <div class="stack"><i class="fab fa-java" title="Java"></i><i class="fab fa-android" title="Android"></i></div>
                         </div>
                         <div class="project-body">
@@ -472,8 +555,8 @@
                     </article>
 
                     <article class="glass project reveal" style="--d:80ms">
-                        <div class="project-media">
-                            <img src="assets/mysql-spring.png" alt="Vista previa de Film-MVC-Spring-Postman-MongoDB" loading="lazy">
+                        <div class="project-media media-gradient g3">
+                            <i class="fa-solid fa-film" aria-hidden="true"></i>
                             <div class="stack"><i class="fab fa-java" title="Java"></i><i class="fas fa-database" title="MongoDB"></i></div>
                         </div>
                         <div class="project-body">
@@ -484,8 +567,8 @@
                     </article>
 
                     <article class="glass project reveal" style="--d:160ms">
-                        <div class="project-media">
-                            <img src="assets/vue-nuxt.jpg" alt="Vista previa de la prueba técnica Óptima Cultura" loading="lazy">
+                        <div class="project-media media-gradient g4">
+                            <i class="fa-solid fa-flask" aria-hidden="true"></i>
                             <div class="stack"><i class="fab fa-vuejs" title="Vue"></i><i class="fas fa-layer-group" title="Nuxt.js"></i></div>
                         </div>
                         <div class="project-body">
@@ -509,7 +592,7 @@
                     <div class="socials">
                         <a href="https://www.linkedin.com/in/felipe-jos%C3%A9-toledano-escudero-4008bb194/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://github.com/F3LIP3X" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="./assets/CV_Felipe_Toledano.pdf" download aria-label="Descargar CV"><i class="fa-solid fa-file-arrow-down"></i></a>
+                        <a href="./assets/CV_Felipe_Toledano.pdf?v=202608" download aria-label="Descargar CV"><i class="fa-solid fa-file-arrow-down"></i></a>
                     </div>
                 </div>
             </div>
@@ -575,20 +658,72 @@
             function onScroll() {
                 nav.classList.toggle('scrolled', window.scrollY > 40);
 
-                var pos = window.scrollY + 140;
-                var current = null;
-                sections.forEach(function (s) {
-                    if (s.offsetTop <= pos) current = s.id;
-                });
-                links.forEach(function (a) {
-                    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-                });
+                setActive(currentSection());
+                onFrame();
                 ticking = false;
+            }
+
+            function currentSection() {
+                if (!sections.length) return null;
+
+                // al final del documento gana siempre la última sección
+                if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 12)) {
+                    return sections[sections.length - 1].id;
+                }
+
+                // la sección que cruza el tercio superior de la pantalla
+                var line = window.innerHeight * 0.35;
+                var id = null;
+                sections.forEach(function (s) {
+                    var r = s.getBoundingClientRect();
+                    if (r.top <= line && r.bottom > line) id = s.id;
+                });
+                return id;
+            }
+
+            function setActive(id) {
+                links.forEach(function (a) {
+                    a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+                });
             }
             window.addEventListener('scroll', function () {
                 if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
             }, { passive: true });
             onScroll();
+
+            /* ---- Barra de progreso + parallax del hero ---- */
+            var progress = document.getElementById('progress');
+            var heroInner = document.querySelector('.hero-inner');
+            var hero = document.getElementById('hero');
+
+            function onFrame() {
+                if (!progress) return;
+                var max = document.documentElement.scrollHeight - window.innerHeight;
+                progress.style.setProperty('--p', max > 0 ? (window.scrollY / max).toFixed(4) : 0);
+                if (heroInner && hero) {
+                    var p = Math.min(window.scrollY / (hero.offsetHeight * 0.75), 1);
+                    heroInner.style.setProperty('--hp', p.toFixed(3));
+                }
+            }
+
+            /* ---- Escalonado automático (se construye poco a poco) ---- */
+            document.querySelectorAll('[data-stagger]').forEach(function (group) {
+                var step = parseInt(group.dataset.stagger, 10) || 60;
+                Array.prototype.forEach.call(group.children, function (child, i) {
+                    child.style.setProperty('--d', (i * step) + 'ms');
+                });
+            });
+
+            // Cada rejilla de tarjetas entra en cascada
+            document.querySelectorAll('.grid, .timeline, .skills-grid').forEach(function (group) {
+                var i = 0;
+                Array.prototype.forEach.call(group.children, function (child) {
+                    if (child.classList.contains('reveal') && !child.style.getPropertyValue('--d')) {
+                        child.style.setProperty('--d', (i * 70) + 'ms');
+                        i++;
+                    }
+                });
+            });
 
             /* ---- Reveal al hacer scroll ---- */
             var io = new IntersectionObserver(function (entries) {
@@ -598,9 +733,29 @@
                         io.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+            }, { threshold: 0.1, rootMargin: '0px 0px -70px 0px' });
 
-            document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+            document.querySelectorAll('.reveal, .pop, .section-head').forEach(function (el) { io.observe(el); });
+
+            /* ---- Contadores animados ---- */
+            var counterIO = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    var el = entry.target;
+                    counterIO.unobserve(el);
+                    var raw = el.textContent.trim();
+                    var prefix = raw.charAt(0) === '+' ? '+' : '';
+                    var target = parseInt(raw.replace(/\D/g, ''), 10) || 0;
+                    var t0 = performance.now(), dur = 1100;
+                    (function step(now) {
+                        var k = Math.min((now - t0) / dur, 1);
+                        k = 1 - Math.pow(1 - k, 3);
+                        el.textContent = prefix + Math.round(target * k);
+                        if (k < 1) requestAnimationFrame(step);
+                    })(t0);
+                });
+            }, { threshold: 0.6 });
+            document.querySelectorAll('.stat b').forEach(function (el) { counterIO.observe(el); });
 
             /* ---- Filtro de habilidades ---- */
             var filterBtns = document.querySelectorAll('.filter-btn');
