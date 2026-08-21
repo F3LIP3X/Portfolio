@@ -800,13 +800,68 @@ section { padding: clamp(72px, 11vh, 132px) 0; position: relative; }
     radial-gradient(120% 120% at 10% 95%, color-mix(in oklab, var(--accent) 40%, transparent), transparent 60%),
     var(--bg-2);
 }
-.media-gradient > i:first-child {
-  font-size: 2.6rem;
-  color: var(--ink);
-  opacity: .8;
-  transition: transform .6s var(--ease);
+/* Ventana de app simulada dentro de project-media */
+.mockui {
+  position: absolute;
+  inset: 13% 11%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  background: color-mix(in oklab, var(--bg-2) 55%, transparent);
+  border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
+  box-shadow: 0 24px 44px -18px rgba(0, 0, 0, .45);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  transition: transform .6s var(--ease), box-shadow .6s var(--ease);
 }
-.project:hover .media-gradient > i:first-child { transform: scale(1.12) rotate(-4deg); }
+.project:hover .mockui { transform: translateY(-3px) scale(1.015); }
+
+.mockui-bar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px;
+  height: 22%;
+  min-height: 20px;
+  background: color-mix(in oklab, var(--ink) 7%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--ink) 10%, transparent);
+}
+.mockui-bar .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--ink) 30%, transparent);
+}
+.mockui-icon {
+  margin-left: auto;
+  font-size: .8rem;
+  color: var(--ink);
+  opacity: .7;
+}
+
+.mockui-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+  padding: 12%;
+}
+.mockui-line {
+  height: 9%;
+  min-height: 5px;
+  border-radius: 4px;
+  background: color-mix(in oklab, var(--ink) 16%, transparent);
+}
+.mockui-line.w60 { width: 60%; }
+.mockui-line.w40 { width: 40%; }
+.mockui-block {
+  flex: 1;
+  border-radius: 8px;
+  background: linear-gradient(135deg,
+    color-mix(in oklab, var(--accent) 32%, transparent),
+    color-mix(in oklab, var(--accent-2) 26%, transparent));
+}
 .project-media::after {
   content: "";
   position: absolute;
