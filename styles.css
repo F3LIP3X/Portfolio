@@ -943,7 +943,7 @@ section { padding: clamp(72px, 11vh, 132px) 0; position: relative; }
     gap: 4px;
     padding: 10px;
     border-radius: var(--r-lg);
-    background: var(--glass-bg-strong);
+    background: color-mix(in oklab, var(--bg-2) 96%, transparent);
     border: 1px solid var(--glass-brd);
     -webkit-backdrop-filter: blur(26px) saturate(180%);
     backdrop-filter: blur(26px) saturate(180%);
