@@ -1,6 +1,6 @@
 # 👋 Hola, este es mi portfolio 
 
-### 💻 Desarrollador Junior Full Stack 
+### 💻 Desarrollador Full Stack 
 
 ---
 
