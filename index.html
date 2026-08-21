@@ -1,904 +1,643 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio de Felipe Toledano, desarrollador front-end.">
-    <meta name="keywords" content="Felipe Toledano, desarrollador, front-end, portafolio">
+    <meta name="description" content="Portafolio de Felipe Toledano, desarrollador Full Stack especializado en front-end: React, Angular, Vue, NestJS y Laravel.">
+    <meta name="keywords" content="Felipe Toledano, desarrollador, front-end, full stack, React, portafolio, Granada">
+    <meta name="author" content="Felipe Toledano">
+    <meta name="theme-color" content="#06070a">
+    <meta property="og:title" content="Felipe Toledano — Full Stack Developer">
+    <meta property="og:description" content="Portafolio de Felipe Toledano, desarrollador Full Stack en Granada.">
+    <meta property="og:type" content="website">
     <link rel="icon" type="image/jpg" href="./assets/archivo18.jpg">
-    <title>Portafolio de Felipe Toledano</title>
-    <!-- Preconnect para recursos externos -->
+    <title>Felipe Toledano — Full Stack Developer</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Animate.css para animaciones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- Estilos personalizados -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Inter+Tight:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
-    <!-- Add FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        // Aplicar tema antes del primer pintado (evita flash)
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) { }
+        })();
+    </script>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
-        <div class="container">
-            <a class="navbar-brand" href="#">Felipe Toledano</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+    <!-- Fondo ambiental -->
+    <div class="ambient" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="nav" id="nav" aria-label="Navegación principal">
+        <a class="brand" href="#hero"><span class="dot"></span>Felipe Toledano</a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">Sobre mí</a></li>
+            <li><a href="#education">Educación</a></li>
+            <li><a href="#experience">Experiencia</a></li>
+            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button class="icon-btn" id="themeBtn" type="button" aria-label="Cambiar tema">
+                <i class="fa-solid fa-moon" id="themeIcon"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Sobre Mí</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">Educación</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experiencia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Habilidades</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Proyectos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contacto</a>
-                    </li>
-                </ul>
-            </div>
+            <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
-    </nav> <!-- Hero Section -->
-    <section id="hero" class="d-flex align-items-center text-center">
-        <!-- Animated Background Elements -->
-        <div class="hero-shapes">
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-        </div>
-        <div class="hero-grid"></div> <!-- Floating skill icons -->
-        <div class="floating-skills">
-            <div class="floating-skill"><i class="fab fa-react"></i></div>
-            <div class="floating-skill"><i class="fab fa-js"></i></div>
-            <div class="floating-skill"><i class="fab fa-node"></i></div>
-            <div class="floating-skill"><i class="fab fa-angular"></i></div>
-            <div class="floating-skill"><i class="fab fa-php"></i></div>
-            <div class="floating-skill"><i class="fab fa-laravel"></i></div>
-            <div class="floating-skill"><i class="fab fa-docker"></i></div>
-            <div class="floating-skill"><i class="fab fa-github"></i></div>
-            <div class="floating-skill"><i class="fab fa-wordpress"></i></div>
-            <div class="floating-skill"><i class="fas fa-database"></i></div>
-        </div>
+    </nav>
 
-        <div class="code-animation">
-            <div class="code-lines">
-                const developer = {<br>
-                &nbsp;&nbsp;name: "Felipe Toledano",<br>
-                &nbsp;&nbsp;role: "Front-end Developer",<br>
-                &nbsp;&nbsp;skills: ["React", "TypeScript", "Node.js"],<br>
-                &nbsp;&nbsp;passion: "Creating amazing user experiences",<br>
-                &nbsp;&nbsp;location: "Granada, España"<br>
-                };<br><br>
-                function buildAmazingProjects() {<br>
-                &nbsp;&nbsp;return developer.skills.map(skill => {<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;return `Building with ${skill}`;<br>
-                &nbsp;&nbsp;});<br>
-                }<br><br>
-                console.log("Welcome to my portfolio!");
-            </div>
-        </div>
+    <!-- Hero -->
+    <header id="hero">
+        <div class="wrap hero-inner">
+            <span class="eyebrow reveal"><span class="live"></span>Disponible para nuevos retos</span>
 
-        <div class="container">
-            <h1 class="animate__animated animate__fadeInDown">
-                <span class="d-block">Hola, soy Felipe Toledano</span>
-                <span class="d-block mt-2">Full Stack Developer</span>
+            <h1 class="hero-title reveal" style="--d:80ms">
+                Hola, soy Felipe
+                <span class="line-2">Full Stack Developer</span>
             </h1>
 
-            <div class="d-flex justify-content-center gap-3 animate__animated animate__fadeInUp">
-                <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
-                <a href="#contact" class="btn btn-outline-primary">Contactar</a>
-                <a href="./assets/CV_Felipe_Toledano.pdf"
-                    class="btn btn-success animate__animated animate__pulse animate__infinite" download>
-                    <i class="fas fa-download me-2"></i>Descargar CV
-                </a>
+            <p class="hero-lead reveal" style="--d:160ms">
+                Construyo interfaces rápidas, accesibles y cuidadas al detalle.
+                React, Angular y Vue en el front; NestJS, Laravel y Spring en el back. Desde Granada.
+            </p>
+
+            <div class="hero-actions reveal" style="--d:240ms">
+                <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-layer-group"></i>Ver proyectos</a>
+                <a href="#contact" class="btn"><i class="fa-regular fa-envelope"></i>Contactar</a>
+                <a href="./assets/CV_Felipe_Toledano.pdf" class="btn" download><i class="fa-solid fa-arrow-down"></i>Descargar CV</a>
+            </div>
+
+            <div class="hero-meta reveal" style="--d:320ms">
+                <span class="pill"><i class="fa-solid fa-location-dot"></i>Granada, España</span>
+                <span class="pill"><i class="fa-solid fa-briefcase"></i>QUANTIA · Full Stack</span>
+                <span class="pill"><i class="fa-solid fa-code"></i>React · NestJS · TypeScript</span>
+            </div>
+
+            <div class="glass code-card reveal" style="--d:400ms" aria-hidden="true">
+                <div class="code-bar">
+                    <span></span><span></span><span></span>
+                    <small>developer.ts</small>
+                </div>
+<pre><code><span class="tok-key">const</span> developer = {
+  name: <span class="tok-str">"Felipe Toledano"</span>,
+  role: <span class="tok-str">"Full Stack Developer"</span>,
+  stack: [<span class="tok-str">"React"</span>, <span class="tok-str">"TypeScript"</span>, <span class="tok-str">"NestJS"</span>],
+  location: <span class="tok-str">"Granada, España"</span>
+};
+
+<span class="tok-key">function</span> <span class="tok-fn">build</span>() {
+  <span class="tok-key">return</span> developer.stack.<span class="tok-fn">map</span>(s =&gt; <span class="tok-str">`Building with ${s}`</span>);
+}
+<span class="tok-com">// console.log("Welcome to my portfolio!")</span></code></pre>
+            </div>
+
+            <div class="scroll-hint" aria-hidden="true">
+                <span>Scroll</span>
+                <i class="fa-solid fa-chevron-down"></i>
             </div>
         </div>
-    </section>
+    </header>
 
     <main>
-        <!-- Sobre Mí -->
-        <section id="about" class="py-5">
-            <div class="container">
-                <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Sobre Mí</h2>
-                <div class="row align-items-center">
-                    <div class="col-md-4 text-center text-md-start">
-                        <img src="./assets/archivo18.jpg" alt="Foto de Felipe Toledano"
-                            class="about-img animate__animated animate__fadeIn" loading="lazy">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="about-content text-md-start">
-                            <p class="animate__animated animate__fadeInUp">
-                                Soy un desarrollador Full Stack. Me especializo en el desarrollo
-                                de aplicaciones web modernas y eficientes, combinando tecnologías front-end y back-end.
-                            </p>
-                            <p class="animate__animated animate__fadeInUp">
-                                Mi formación en Desarrollo de Aplicaciones Multiplataforma (DAM) y Desarrollo de
-                                Aplicaciones Web (DAW) me ha proporcionado una sólida base
-                                en programación y arquitectura de software. Me apasiona especialmente el desarrollo
-                                front-end,
-                                donde puedo combinar mi creatividad con mis habilidades técnicas para crear interfaces
-                                intuitivas
-                                y atractivas.
-                            </p>
-                            <p class="animate__animated animate__fadeInUp">
-                                Actualmente, me encuentro expandiendo mis conocimientos en tecnologías como React,
-                                Node.js y bases
-                                de datos tanto SQL como NoSQL. Mi objetivo es crear soluciones que no solo funcionen
-                                bien, sino que
-                                también proporcionen una excelente experiencia de usuario.
-                            </p>
-                            <div class="animate__animated animate__fadeInUp">
-                                <p>Durante mi formación, he adquirido experiencia en:</p>
-                                <ul class="learning-list">
-                                    <li>Desarrollo web full-stack con tecnologías modernas</li>
-                                    <li>Implementación de APIs RESTful</li>
-                                    <li>Diseño y gestión de bases de datos</li>
-                                    <li>Control de versiones y metodologías ágiles</li>
-                                    <li>Desarrollo de aplicaciones móviles nativas</li>
-                                </ul>
-                            </div>
+        <!-- Sobre mí -->
+        <section id="about">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow reveal">01 — Perfil</span>
+                    <h2 class="section-title reveal" style="--d:60ms">Sobre mí</h2>
+                    <p class="section-sub reveal" style="--d:120ms">Desarrollo aplicaciones web modernas combinando front-end y back-end, con foco en la experiencia de usuario.</p>
+                </div>
+
+                <div class="about-grid">
+                    <figure class="glass about-photo reveal">
+                        <img src="./assets/archivo18.jpg" alt="Retrato de Felipe Toledano" loading="lazy" width="640" height="800">
+                        <figcaption>Felipe Toledano · Granada</figcaption>
+                    </figure>
+
+                    <div class="glass about-card reveal" style="--d:100ms">
+                        <p>
+                            Soy desarrollador Full Stack. Me especializo en aplicaciones web modernas y eficientes,
+                            combinando tecnologías front-end y back-end.
+                        </p>
+                        <p>
+                            Mi formación en Desarrollo de Aplicaciones Multiplataforma (DAM) y Desarrollo de Aplicaciones
+                            Web (DAW) me ha dado una base sólida en programación y arquitectura de software. Me apasiona
+                            especialmente el front-end, donde combino creatividad y técnica para crear interfaces
+                            intuitivas y atractivas.
+                        </p>
+                        <p>
+                            Actualmente amplío conocimientos en React, Node.js y bases de datos SQL y NoSQL. Mi objetivo
+                            es crear soluciones que no solo funcionen bien, sino que ofrezcan una experiencia excelente.
+                        </p>
+
+                        <ul class="learn-list">
+                            <li><i class="fa-solid fa-check"></i>Desarrollo web full-stack con tecnologías modernas</li>
+                            <li><i class="fa-solid fa-check"></i>Implementación de APIs RESTful</li>
+                            <li><i class="fa-solid fa-check"></i>Diseño y gestión de bases de datos</li>
+                            <li><i class="fa-solid fa-check"></i>Control de versiones y metodologías ágiles</li>
+                            <li><i class="fa-solid fa-check"></i>Desarrollo de aplicaciones móviles nativas</li>
+                        </ul>
+
+                        <div class="stat-row">
+                            <div class="glass stat"><b id="statYears">+1</b><span>Años de experiencia</span></div>
+                            <div class="glass stat"><b>30</b><span>Tecnologías</span></div>
+                            <div class="glass stat"><b>6</b><span>Proyectos públicos</span></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section> <!-- Nueva sección de Educación -->
-        <section id="education" class="py-5">
-            <div class="container">
-                <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Educación</h2>
-                <div class="row g-4">
-                    <div class="col-md-4 animate__animated animate__fadeInLeft">
-                        <div class="education-card">
-                            <img src="./assets/institutions/stem.png" alt="Logo de Escuela STEM Granada"
-                                class="institution-img mb-3" loading="lazy">
-                            <h3>Grado Superior en Desarrollo de Aplicaciones Web</h3>
-                            <p class="institution">Escuela STEM Granada</p>
-                            <p class="degree-type">Informática</p>
-                            <p class="year">Sept. 2024</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 animate__animated animate__fadeIn">
-                        <div class="education-card">
-                            <img src="./assets/institutions/medac.jpg" alt="Logo de MEDAC" class="institution-img mb-3" loading="lazy">
-                            <h3>Ciclo Formativo de Grado Superior</h3>
-                            <p class="institution">MEDAC</p>
-                            <p class="degree-type">Desarrollo de Aplicaciones Multiplataforma</p>
-                            <p class="year">Sept. 2022 - Jul. 2024</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 animate__animated animate__fadeInRight">
-                        <div class="education-card">
-                            <img src="./assets/institutions/hlanz.jpg" alt="Logo de IES Politécnico Hermenegildo Lanz"
-                                class="institution-img mb-3" loading="lazy">
-                            <h3>Ciclo Formativo de Grado Medio</h3>
-                            <p class="institution">IES Politécnico Hermenegildo Lanz</p>
-                            <p class="degree-type">Sistemas Microinformáticos y Redes</p>
-                            <p class="year">Sept. 2020 - Jun. 2021</p>
-                        </div>
-                    </div>
+        </section>
+
+        <!-- Educación -->
+        <section id="education">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow reveal">02 — Formación</span>
+                    <h2 class="section-title reveal" style="--d:60ms">Educación</h2>
+                </div>
+
+                <div class="grid grid-3">
+                    <article class="glass card edu-card reveal">
+                        <img src="./assets/institutions/stem.png" alt="Logo de Escuela STEM Granada" class="edu-logo" loading="lazy">
+                        <h3>Grado Superior en Desarrollo de Aplicaciones Web</h3>
+                        <p class="institution">Escuela STEM Granada</p>
+                        <p class="degree">Informática</p>
+                        <p class="year">Sept. 2024</p>
+                    </article>
+
+                    <article class="glass card edu-card reveal" style="--d:90ms">
+                        <img src="./assets/institutions/medac.jpg" alt="Logo de MEDAC" class="edu-logo" loading="lazy">
+                        <h3>Ciclo Formativo de Grado Superior</h3>
+                        <p class="institution">MEDAC</p>
+                        <p class="degree">Desarrollo de Aplicaciones Multiplataforma</p>
+                        <p class="year">Sept. 2022 — Jul. 2024</p>
+                    </article>
+
+                    <article class="glass card edu-card reveal" style="--d:180ms">
+                        <img src="./assets/institutions/hlanz.jpg" alt="Logo de IES Politécnico Hermenegildo Lanz" class="edu-logo" loading="lazy">
+                        <h3>Ciclo Formativo de Grado Medio</h3>
+                        <p class="institution">IES Politécnico Hermenegildo Lanz</p>
+                        <p class="degree">Sistemas Microinformáticos y Redes</p>
+                        <p class="year">Sept. 2020 — Jun. 2021</p>
+                    </article>
                 </div>
             </div>
-        </section><!-- Experiencia -->
-        <section id="experience" class="py-5">
-            <div class="container">
-                <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Experiencia</h2>
-                <div class="row g-4">
-                    <!-- Puesto actual - QUANTIA Full-time -->
-                    <div class="col-12 animate__animated animate__fadeIn">
-                        <div class="experience-card current-position">
-                            <div class="row align-items-center">
-                                <div class="col-md-2 text-center">
-                                    <a href="https://www.linkedin.com/company/quantia-ingenier%C3%ADa-y-consultor%C3%ADa" target="_blank" rel="noopener">
-                                        <img src="./assets/image-quantia.jpg" alt="Logo de QUANTIA"
-                                            class="company-logo mb-3" loading="lazy" style="cursor:pointer;">
-                                    </a>
+        </section>
+
+        <!-- Experiencia -->
+        <section id="experience">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow reveal">03 — Trayectoria</span>
+                    <h2 class="section-title reveal" style="--d:60ms">Experiencia</h2>
+                </div>
+
+                <div class="timeline">
+                    <!-- QUANTIA -->
+                    <article class="glass exp-card featured reveal">
+                        <div class="exp-top">
+                            <a href="https://www.linkedin.com/company/quantia-ingenier%C3%ADa-y-consultor%C3%ADa" target="_blank" rel="noopener" aria-label="QUANTIA en LinkedIn">
+                                <img src="./assets/image-quantia.jpg" alt="Logo de QUANTIA" class="company-logo" loading="lazy">
+                            </a>
+                            <div class="exp-body">
+                                <div class="exp-head">
+                                    <h3>Programador Full Stack</h3>
+                                    <span class="tag live">Actualidad</span>
+                                    <span class="tag">Jornada completa</span>
                                 </div>
-                                <div class="col-md-10">
-                                    <div class="position-header">
-                                        <h3 class="card-title">Programador Full Stack</h3>
-                                        <span class="job-type">Jornada completa</span>
-                                    </div>
-                                    <p class="company-info">
-                                        <strong>QUANTIA Ingeniería y Consultoría</strong> |
-                                        Jun. 2026 - actualidad · <span id="quantia-duration"></span> |
-                                        Granada | <span class="work-mode">Híbrido</span>
-                                    </p>
-                                    <p class="position-description">
-                                        Desarrollo de aplicaciones web con React + Vite en el frontend
-                                        y NestJS en el backend, construyendo soluciones escalables y
-                                        orientadas a resultados para los proyectos de la empresa.
-                                    </p>
-                                    <div class="skills-tags">
-                                        <span class="badge bg-primary me-1 mb-1">React.js</span>
-                                        <span class="badge bg-primary me-1 mb-1">Vite</span>
-                                        <span class="badge bg-primary me-1 mb-1">NestJS</span>
-                                        <span class="badge bg-primary me-1 mb-1">TypeScript</span>
-                                    </div>
+                                <p class="exp-meta">
+                                    <strong>QUANTIA Ingeniería y Consultoría</strong>
+                                    <span class="sep">·</span> Jun. 2026 — actualidad
+                                    <span class="sep">·</span> <span id="quantia-duration"></span>
+                                    <span class="sep">·</span> Granada
+                                    <span class="sep">·</span> Híbrido
+                                </p>
+                                <p>
+                                    Desarrollo de aplicaciones web con React + Vite en el frontend y NestJS en el
+                                    backend, construyendo soluciones escalables y orientadas a resultados.
+                                </p>
+                                <div class="chips">
+                                    <span class="chip">React.js</span><span class="chip">Vite</span>
+                                    <span class="chip">NestJS</span><span class="chip">TypeScript</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- Puesto actual - Hiberus Full-time -->
-                    <div class="col-12 animate__animated animate__fadeIn">
-                        <div class="experience-card current-position">
-                            <div class="row align-items-center">
-                                <div class="col-md-2 text-center">
-                                    <a href="https://www.linkedin.com/company/hiberus" target="_blank" rel="noopener">
-                                        <img src="./assets/hiberus_logo.jpg" alt="Logo de Hiberus"
-                                            class="company-logo mb-3" loading="lazy" style="cursor:pointer;">
-                                    </a>
+                    <!-- Hiberus full-time -->
+                    <article class="glass exp-card reveal" style="--d:80ms">
+                        <div class="exp-top">
+                            <a href="https://www.linkedin.com/company/hiberus" target="_blank" rel="noopener" aria-label="Hiberus en LinkedIn">
+                                <img src="./assets/hiberus_logo.jpg" alt="Logo de Hiberus" class="company-logo" loading="lazy">
+                            </a>
+                            <div class="exp-body">
+                                <div class="exp-head">
+                                    <h3>Desarrollador Front-end</h3>
+                                    <span class="tag">Jornada completa</span>
                                 </div>
-                                <div class="col-md-10">
-                                    <div class="position-header">
-                                        <h3 class="card-title">Desarrollador de Front-end</h3>
-                                        <span class="job-type">Jornada completa</span>
-                                    </div>
-                                    <p class="company-info"><strong>Hiberus</strong> | Jun. 2025 - Sep. 2025 · 7 mes |
-                                        Granada, Andalucía, España | <span class="work-mode">Híbrido</span></p>
-                                    <p class="position-description">
-                                        Desarrollador Frontend con 7 meses de experiencia en la
-                                        creación de componentes Gutenberg (WordPress) con React.
-                                        Sólidos conocimientos en PHP, AJAX y Angular, con
-                                        experiencia en la implementación de diseños desde Figma.
-                                        Además, he colaborado en proyectos Java en entornos Liferay
-                                        y sistemas legacy, en el sector de banca y seguros.
-                                    </p>
-                                    <div class="skills-tags">
-                                        <span class="badge bg-primary me-1 mb-1">PHP</span>
-                                        <span class="badge bg-primary me-1 mb-1">Desarrollo Front-end</span>
-                                        <span class="badge bg-primary me-1 mb-1">Gutenberg blocks</span>
-                                        <span class="badge bg-primary me-1 mb-1">AJAX</span>
-                                        <span class="badge bg-primary me-1 mb-1">HTML</span>
-                                        <span class="badge bg-primary me-1 mb-1">React.js</span>
-                                        <span class="badge bg-primary me-1 mb-1">GitLab</span>
-                                        <span class="badge bg-primary me-1 mb-1">Bitbucket</span>
-                                        <span class="badge bg-primary me-1 mb-1">SCSS</span>
-                                    </div>
+                                <p class="exp-meta">
+                                    <strong>Hiberus</strong>
+                                    <span class="sep">·</span> Jun. 2025 — Sep. 2025
+                                    <span class="sep">·</span> Granada
+                                    <span class="sep">·</span> Híbrido
+                                </p>
+                                <p>
+                                    Creación de componentes Gutenberg (WordPress) con React. Conocimientos sólidos en
+                                    PHP, AJAX y Angular, con implementación de diseños desde Figma. Colaboración en
+                                    proyectos Java en entornos Liferay y sistemas legacy, en banca y seguros.
+                                </p>
+                                <div class="chips">
+                                    <span class="chip">PHP</span><span class="chip">Front-end</span>
+                                    <span class="chip">Gutenberg blocks</span><span class="chip">AJAX</span>
+                                    <span class="chip">HTML</span><span class="chip">React.js</span>
+                                    <span class="chip">GitLab</span><span class="chip">Bitbucket</span>
+                                    <span class="chip">SCSS</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- Prácticas en Hiberus -->
-                    <div class="col-md-6 animate__animated animate__fadeInLeft">
-                        <div class="experience-card">
-                            <div class="position-header">
-                                <h3 class="card-title">Consultor</h3>
-                                <span class="job-type internship">Contrato de prácticas</span>
+                    <div class="grid grid-2">
+                        <!-- Hiberus prácticas -->
+                        <article class="glass exp-card reveal">
+                            <div class="exp-head">
+                                <h3>Consultor</h3>
+                                <span class="tag alt">Contrato de prácticas</span>
                             </div>
-                            <p class="company-info"><strong>Hiberus</strong> | Mar. 2025 - Jun. 2025 · 4 meses |
-                                Granada, Andalucía, España | <span class="work-mode">Presencial</span></p>
-                            <p class="position-description">
-                                Desarrollador Frontend con 7 meses de experiencia en la
-                                creación de componentes Gutenberg (WordPress) con React.
-                                Sólidos conocimientos en PHP, AJAX y Angular, con
-                                experiencia en la implementación de diseños desde Figma.
-                                Además, he colaborado en proyectos Java en entornos Liferay
-                                y sistemas legacy, en el sector de banca y seguros.
+                            <p class="exp-meta">
+                                <strong>Hiberus</strong>
+                                <span class="sep">·</span> Mar. 2025 — Jun. 2025
+                                <span class="sep">·</span> Granada
+                                <span class="sep">·</span> Presencial
                             </p>
-                            <div class="skills-tags">
-                                <span class="badge bg-secondary me-1 mb-1">React.js</span>
-                                <span class="badge bg-secondary me-1 mb-1">Vite</span>
-                                <span class="badge bg-secondary me-1 mb-1">Buenas prácticas</span>
-                                <span class="badge bg-secondary me-1 mb-1">AngularJS</span>
-                                <span class="badge bg-secondary me-1 mb-1">AJAX</span>
-                                <span class="badge bg-secondary me-1 mb-1">PHP</span>
-                                <span class="badge bg-secondary me-1 mb-1">Accesibilidad</span>
-                                <span class="badge bg-secondary me-1 mb-1">Accesibilidad digital</span>
-                                <span class="badge bg-secondary me-1 mb-1">Gutenberg Blocks</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Ruiz Lara & Asociados -->
-                    <div class="col-md-6 animate__animated animate__fadeInRight">
-                        <div class="experience-card">
-                            <div class="position-header">
-                                <h3 class="card-title">Desarrollador de Front-end</h3>
-                                <span class="job-type part-time">Alumno en Prácticas</span>
-                            </div>
-                            <p class="company-info"><strong>Ruiz Lara & Asociados</strong> | May. 2024 - Jun. 2024 · 2
-                                meses | Granada, Andalucía, España | <span class="work-mode">Presencial</span></p>
-                            <div class="skills-tags">
-                                <span class="badge bg-info me-1 mb-1">React.js</span>
-                                <span class="badge bg-info me-1 mb-1">Diseño de UI</span>
-                                <span class="badge bg-info me-1 mb-1">TypeScript</span>
-                                <span class="badge bg-info me-1 mb-1">Gestión de proyectos</span>
-                                <span class="badge bg-info me-1 mb-1">Diseño de interfaces web</span>
-                                <span class="badge bg-info me-1 mb-1">Tailwind CSS</span>
-                                <span class="badge bg-info me-1 mb-1">WordPress</span>
-                                <span class="badge bg-info me-1 mb-1">GitHub</span>
-                                <span class="badge bg-info me-1 mb-1">Desarrollo Front-end</span>
-                                <span class="badge bg-info me-1 mb-1">Elementor</span>
-                                <span class="badge bg-info me-1 mb-1">Supabase</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Arena Pro Gaming -->
-                    <div class="col-md-6 animate__animated animate__fadeInLeft">
-                        <div class="experience-card">
-                            <div class="position-header">
-                                <h3 class="card-title">Programador Full Stack</h3>
-                                <span class="job-type">Alumno en Prácticas</span>
-                            </div>
-                            <p class="company-info"><strong>Arena Pro Gaming</strong> | Mar. 2024 - Abr. 2024 · 2 meses
-                                | Granada, Andalucía, España | <span class="work-mode">Presencial</span></p>
-                            <div class="skills-tags">
-                                <span class="badge bg-success me-1 mb-1">React.js</span>
-                                <span class="badge bg-success me-1 mb-1">Desarrollo web back-end</span>
-                                <span class="badge bg-success me-1 mb-1">JavaScript</span>
-                                <span class="badge bg-success me-1 mb-1">HTML</span>
-                                <span class="badge bg-success me-1 mb-1">Tailwind CSS</span>
-                                <span class="badge bg-success me-1 mb-1">Trabajo en equipo</span>
-                                <span class="badge bg-success me-1 mb-1">GitHub</span>
-                                <span class="badge bg-success me-1 mb-1">CSS</span>
-                                <span class="badge bg-success me-1 mb-1">Desarrollo Front-end</span>
-                                <span class="badge bg-success me-1 mb-1">PostgreSQL</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Universidad Granada -->
-                    <div class="col-md-6 animate__animated animate__fadeInRight">
-                        <div class="experience-card">
-                            <div class="position-header">
-                                <h3 class="card-title">Técnico Informático en Prácticas</h3>
-                                <span class="job-type internship">Alumno en Prácticas</span>
-                            </div>
-                            <p class="company-info"><strong>Universidad Granada Relaciones Laborales y Recursos
-                                    Humanos</strong> | Abr. 2021 - Jun. 2021 · 3 meses | Granada, Andalucía, España |
-                                <span class="work-mode">Presencial</span>
+                            <p>
+                                Desarrollo front-end con React y Gutenberg, accesibilidad digital y buenas prácticas
+                                en proyectos de banca y seguros.
                             </p>
-                            <div class="skills-tags">
-                                <span class="badge bg-warning me-1 mb-1">Servicios administrados</span>
-                                <span class="badge bg-warning me-1 mb-1">Ofimática</span>
-                                <span class="badge bg-warning me-1 mb-1">Fotografía</span>
-                                <span class="badge bg-warning me-1 mb-1">Gestión documental</span>
+                            <div class="chips">
+                                <span class="chip">React.js</span><span class="chip">Vite</span>
+                                <span class="chip">AngularJS</span><span class="chip">AJAX</span>
+                                <span class="chip">PHP</span><span class="chip">Accesibilidad</span>
+                                <span class="chip">Gutenberg Blocks</span>
                             </div>
-                        </div>
+                        </article>
+
+                        <!-- Ruiz Lara -->
+                        <article class="glass exp-card reveal" style="--d:80ms">
+                            <div class="exp-head">
+                                <h3>Desarrollador Front-end</h3>
+                                <span class="tag alt">Alumno en prácticas</span>
+                            </div>
+                            <p class="exp-meta">
+                                <strong>Ruiz Lara &amp; Asociados</strong>
+                                <span class="sep">·</span> May. 2024 — Jun. 2024
+                                <span class="sep">·</span> Granada
+                                <span class="sep">·</span> Presencial
+                            </p>
+                            <div class="chips">
+                                <span class="chip">React.js</span><span class="chip">Diseño de UI</span>
+                                <span class="chip">TypeScript</span><span class="chip">Tailwind CSS</span>
+                                <span class="chip">WordPress</span><span class="chip">GitHub</span>
+                                <span class="chip">Elementor</span><span class="chip">Supabase</span>
+                            </div>
+                        </article>
+
+                        <!-- Arena Pro Gaming -->
+                        <article class="glass exp-card reveal">
+                            <div class="exp-head">
+                                <h3>Programador Full Stack</h3>
+                                <span class="tag alt">Alumno en prácticas</span>
+                            </div>
+                            <p class="exp-meta">
+                                <strong>Arena Pro Gaming</strong>
+                                <span class="sep">·</span> Mar. 2024 — Abr. 2024
+                                <span class="sep">·</span> Granada
+                                <span class="sep">·</span> Presencial
+                            </p>
+                            <div class="chips">
+                                <span class="chip">React.js</span><span class="chip">Back-end</span>
+                                <span class="chip">JavaScript</span><span class="chip">HTML</span>
+                                <span class="chip">Tailwind CSS</span><span class="chip">GitHub</span>
+                                <span class="chip">CSS</span><span class="chip">PostgreSQL</span>
+                            </div>
+                        </article>
+
+                        <!-- UGR -->
+                        <article class="glass exp-card reveal" style="--d:80ms">
+                            <div class="exp-head">
+                                <h3>Técnico Informático</h3>
+                                <span class="tag alt">Alumno en prácticas</span>
+                            </div>
+                            <p class="exp-meta">
+                                <strong>Universidad de Granada — RR. LL. y RR. HH.</strong>
+                                <span class="sep">·</span> Abr. 2021 — Jun. 2021
+                                <span class="sep">·</span> Granada
+                                <span class="sep">·</span> Presencial
+                            </p>
+                            <div class="chips">
+                                <span class="chip">Servicios administrados</span><span class="chip">Ofimática</span>
+                                <span class="chip">Fotografía</span><span class="chip">Gestión documental</span>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Habilidades -->
-        <section id="skills" class="py-5">
-            <div class="container">
-                <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Habilidades</h2>
-                <div class="row text-center g-4">
-                    <!-- 1. React -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-react fa-3x mb-3"></i>
-                                <h5 class="card-title">React</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 2. Angular -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-angular fa-3x mb-3"></i>
-                                <h5 class="card-title">Angular</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 3. PHP/Laravel -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-php fa-3x mb-3"></i>
-                                <h5 class="card-title">PHP/Laravel</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 4. WordPress -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-wordpress fa-3x mb-3"></i>
-                                <h5 class="card-title">WordPress</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 5. Gutenberg -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fas fa-cubes fa-3x mb-3"></i>
-                                <h5 class="card-title">Gutenberg</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 6. AJAX -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fas fa-code fa-3x mb-3"></i>
-                                <h5 class="card-title">AJAX</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 7. SCSS/Sass -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-sass fa-3x mb-3"></i>
-                                <h5 class="card-title">SCSS/Sass</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 8. TypeScript -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-js fa-3x mb-3"></i>
-                                <h5 class="card-title">TypeScript</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 9. Tailwind/Bootstrap -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-css3 fa-3x mb-3"></i>
-                                <h5 class="card-title">Tailwind/Bootstrap</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 10. Vue -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-vuejs fa-3x mb-3"></i>
-                                <h5 class="card-title">Vue</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 11. Nuxt.js -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fas fa-layer-group fa-3x mb-3"></i>
-                                <h5 class="card-title">Nuxt.js</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 12. Figma -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-figma fa-3x mb-3"></i>
-                                <h5 class="card-title">Figma</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 13. Node.js -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-node fa-3x mb-3"></i>
-                                <h5 class="card-title">Node.js</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 14. MySQL/MongoDB -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fas fa-database fa-3x mb-3"></i>
-                                <h5 class="card-title">MySQL/MongoDB</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 15. PostgreSQL -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fas fa-database fa-3x mb-3"></i>
-                                <h5 class="card-title">PostgreSQL</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 16. Oracle/MySQL -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fas fa-database fa-3x mb-3"></i>
-                                <h5 class="card-title">Oracle/MySQL</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 17. GitLab -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-gitlab fa-3x mb-3"></i>
-                                <h5 class="card-title">GitLab</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 18. GitHub -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-github fa-3x mb-3"></i>
-                                <h5 class="card-title">GitHub</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 19. Bitbucket -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-bitbucket fa-3x mb-3"></i>
-                                <h5 class="card-title">Bitbucket</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 20. Azure DevOps -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-microsoft fa-3x mb-3"></i>
-                                <h5 class="card-title">Azure DevOps</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 21. Docker -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-docker fa-3x mb-3"></i>
-                                <h5 class="card-title">Docker</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 22. Vite -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fas fa-bolt fa-3x mb-3"></i>
-                                <h5 class="card-title">Vite</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 23. Jenkins -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fas fa-tools fa-3x mb-3"></i>
-                                <h5 class="card-title">Jenkins</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 24. JIRA -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-atlassian fa-3x mb-3"></i>
-                                <h5 class="card-title">JIRA</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 25. Liferay -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fas fa-server fa-3x mb-3"></i>
-                                <h5 class="card-title">Liferay</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 26. Java -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-java fa-3x mb-3"></i>
-                                <h5 class="card-title">Java</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 27. Python -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fab fa-python fa-3x mb-3"></i>
-                                <h5 class="card-title">Python</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 28. Scrum -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fas fa-users fa-3x mb-3"></i>
-                                <h5 class="card-title">Scrum</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 29. SQL -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fas fa-database fa-3x mb-3"></i>
-                                <h5 class="card-title">SQL</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 30. Desarrollo con Claude IA -->
-                    <div class="col-md-3 col-sm-6 animate__animated animate__fadeIn">
-                        <div class="card skill-card">
-                            <div class="card-body">
-                                <i class="fas fa-brain fa-3x mb-3"></i>
-                                <h5 class="card-title">Desarrollo con Claude IA</h5>
-                            </div>
-                        </div>
-                    </div>
+        <section id="skills">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow reveal">04 — Stack</span>
+                    <h2 class="section-title reveal" style="--d:60ms">Habilidades</h2>
+                    <p class="section-sub reveal" style="--d:120ms">Filtra por categoría para ver las tecnologías con las que trabajo.</p>
+                </div>
+
+                <div class="skill-filters reveal" role="tablist" aria-label="Filtros de habilidades">
+                    <button class="filter-btn active" type="button" data-filter="all">Todas</button>
+                    <button class="filter-btn" type="button" data-filter="front">Front-end</button>
+                    <button class="filter-btn" type="button" data-filter="back">Back-end</button>
+                    <button class="filter-btn" type="button" data-filter="data">Datos</button>
+                    <button class="filter-btn" type="button" data-filter="tools">Herramientas</button>
+                </div>
+
+                <div class="skills-grid" id="skillsGrid">
+                    <div class="glass skill reveal" data-cat="front"><i class="fab fa-react"></i><span>React</span></div>
+                    <div class="glass skill reveal" data-cat="front"><i class="fab fa-angular"></i><span>Angular</span></div>
+                    <div class="glass skill reveal" data-cat="front"><i class="fab fa-vuejs"></i><span>Vue</span></div>
+                    <div class="glass skill reveal" data-cat="front"><i class="fas fa-layer-group"></i><span>Nuxt.js</span></div>
+                    <div class="glass skill reveal" data-cat="front"><i class="fab fa-js"></i><span>TypeScript</span></div>
+                    <div class="glass skill reveal" data-cat="front"><i class="fab fa-sass"></i><span>SCSS/Sass</span></div>
+                    <div class="glass skill reveal" data-cat="front"><i class="fab fa-css3"></i><span>Tailwind/Bootstrap</span></div>
+                    <div class="glass skill reveal" data-cat="front"><i class="fas fa-code"></i><span>AJAX</span></div>
+                    <div class="glass skill reveal" data-cat="front"><i class="fas fa-bolt"></i><span>Vite</span></div>
+                    <div class="glass skill reveal" data-cat="front"><i class="fab fa-figma"></i><span>Figma</span></div>
+                    <div class="glass skill reveal" data-cat="back"><i class="fab fa-node"></i><span>Node.js</span></div>
+                    <div class="glass skill reveal" data-cat="back"><i class="fab fa-php"></i><span>PHP/Laravel</span></div>
+                    <div class="glass skill reveal" data-cat="back"><i class="fab fa-java"></i><span>Java</span></div>
+                    <div class="glass skill reveal" data-cat="back"><i class="fab fa-python"></i><span>Python</span></div>
+                    <div class="glass skill reveal" data-cat="back"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
+                    <div class="glass skill reveal" data-cat="back"><i class="fas fa-cubes"></i><span>Gutenberg</span></div>
+                    <div class="glass skill reveal" data-cat="back"><i class="fas fa-server"></i><span>Liferay</span></div>
+                    <div class="glass skill reveal" data-cat="data"><i class="fas fa-database"></i><span>MySQL/MongoDB</span></div>
+                    <div class="glass skill reveal" data-cat="data"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+                    <div class="glass skill reveal" data-cat="data"><i class="fas fa-database"></i><span>Oracle</span></div>
+                    <div class="glass skill reveal" data-cat="data"><i class="fas fa-database"></i><span>SQL</span></div>
+                    <div class="glass skill reveal" data-cat="tools"><i class="fab fa-github"></i><span>GitHub</span></div>
+                    <div class="glass skill reveal" data-cat="tools"><i class="fab fa-gitlab"></i><span>GitLab</span></div>
+                    <div class="glass skill reveal" data-cat="tools"><i class="fab fa-bitbucket"></i><span>Bitbucket</span></div>
+                    <div class="glass skill reveal" data-cat="tools"><i class="fab fa-microsoft"></i><span>Azure DevOps</span></div>
+                    <div class="glass skill reveal" data-cat="tools"><i class="fab fa-docker"></i><span>Docker</span></div>
+                    <div class="glass skill reveal" data-cat="tools"><i class="fas fa-tools"></i><span>Jenkins</span></div>
+                    <div class="glass skill reveal" data-cat="tools"><i class="fab fa-atlassian"></i><span>JIRA</span></div>
+                    <div class="glass skill reveal" data-cat="tools"><i class="fas fa-users"></i><span>Scrum</span></div>
+                    <div class="glass skill reveal" data-cat="tools"><i class="fas fa-brain"></i><span>Claude IA</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-5">
-            <div class="container">
-                <h2 class="section-title text-center mb-5">Proyectos Destacados</h2>
-                <div class="row g-4">
-                    <!-- STEMFounding -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card">
-                            <div class="project-image-container">
-                                <img src="assets/Laravel.png" alt="Vista previa de STEMFounding" loading="lazy">
-                                <div class="tech-stack">
-                                    <i class="fab fa-php" title="PHP"></i>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h3>STEMFounding</h3>
-                                <p>Project manager hecho con Laravel durante el segundo trimestre del DAM en STEM
-                                    Granada.</p>
-                                <div class="card-actions">
-                                    <a href="https://github.com/F3LIP3X/STEMFounding" class="btn btn-primary"
-                                        target="_blank">Ver Proyecto</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Proyectos -->
+        <section id="projects">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow reveal">05 — Trabajo</span>
+                    <h2 class="section-title reveal" style="--d:60ms">Proyectos destacados</h2>
+                </div>
 
-                    <!-- ArenaCamping-web -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card">
-                            <div class="project-image-container">
-                                <img src="assets/Arena.png" alt="Vista previa de ArenaCamping-web" loading="lazy">
-                                <div class="tech-stack">
-                                    <i class="fab fa-js" title="JavaScript"></i>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h3>ArenaCamping-web</h3>
-                                <p>Aplicación web para gestionar reservas en campings.</p>
-                                <div class="card-actions">
-                                    <a href="https://github.com/F3LIP3X/ArenaCamping-web" class="btn btn-primary"
-                                        target="_blank">Ver Proyecto</a>
-                                </div>
-                            </div>
+                <div class="grid grid-3">
+                    <article class="glass project reveal">
+                        <div class="project-media">
+                            <img src="assets/Laravel.png" alt="Vista previa de STEMFounding" loading="lazy">
+                            <div class="stack"><i class="fab fa-php" title="PHP / Laravel"></i></div>
                         </div>
-                    </div>
+                        <div class="project-body">
+                            <h3>STEMFounding</h3>
+                            <p>Project manager hecho con Laravel durante el segundo trimestre del DAM en STEM Granada.</p>
+                            <a href="https://github.com/F3LIP3X/STEMFounding" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Ver proyecto <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
 
-                    <!-- MongoDB-Spring-Maven -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card">
-                            <div class="project-image-container">
-                                <img src="assets/mdb-s-m.jpg" alt="Vista previa de MongoDB-Spring-Maven" loading="lazy">
-                                <div class="tech-stack">
-                                    <i class="fab fa-java" title="Java"></i>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h3>MongoDB-Spring-Maven</h3>
-                                <p>Proyecto MVC con Spring Boot y MongoDB.</p>
-                                <div class="card-actions">
-                                    <a href="https://github.com/F3LIP3X/MongoDB-Spring-Maven" class="btn btn-primary"
-                                        target="_blank">Ver Proyecto</a>
-                                </div>
-                            </div>
+                    <article class="glass project reveal" style="--d:80ms">
+                        <div class="project-media">
+                            <img src="assets/Arena.png" alt="Vista previa de ArenaCamping-web" loading="lazy">
+                            <div class="stack"><i class="fab fa-js" title="JavaScript"></i></div>
                         </div>
-                    </div>
+                        <div class="project-body">
+                            <h3>ArenaCamping-web</h3>
+                            <p>Aplicación web para gestionar reservas en campings.</p>
+                            <a href="https://github.com/F3LIP3X/ArenaCamping-web" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Ver proyecto <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
 
-                    <!-- FlappyGame -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card">
-                            <div class="project-image-container">
-                                <img src="assets/flappy.png" alt="Vista previa de FlappyGame" loading="lazy">
-                                <div class="tech-stack">
-                                    <i class="fab fa-java" title="Java"></i>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h3>FlappyGame</h3>
-                                <p>Juego tipo Flappy Bird desarrollado en Android Studio.</p>
-                                <div class="card-actions">
-                                    <a href="https://github.com/F3LIP3X/FlappyGame" class="btn btn-primary"
-                                        target="_blank">Ver Proyecto</a>
-                                </div>
-                            </div>
+                    <article class="glass project reveal" style="--d:160ms">
+                        <div class="project-media">
+                            <img src="assets/mdb-s-m.jpg" alt="Vista previa de MongoDB-Spring-Maven" loading="lazy">
+                            <div class="stack"><i class="fab fa-java" title="Java"></i></div>
                         </div>
-                    </div>
+                        <div class="project-body">
+                            <h3>MongoDB-Spring-Maven</h3>
+                            <p>Proyecto MVC con Spring Boot y MongoDB.</p>
+                            <a href="https://github.com/F3LIP3X/MongoDB-Spring-Maven" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Ver proyecto <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
 
-                    <!-- Film-MVC-Spring-Postman-MongoDB -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card">
-                            <div class="project-image-container">
-                                <img src="assets/mysql-spring.png" alt="Vista previa de Film-MVC-Spring-Postman-MongoDB" loading="lazy">
-                                <div class="tech-stack">
-                                    <i class="fab fa-java" title="Java"></i>
-                                    <i class="fas fa-database" title="MongoDB"></i>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h3>Film-MVC-Spring-Postman-MongoDB</h3>
-                                <p>Proyecto Java con Spring Boot y MongoDB, con endpoints probados mediante
-                                    Postman.</p>
-                                <div class="card-actions">
-                                    <a href="https://github.com/F3LIP3X/Film-MVC-Spring-Postman-MongoDB"
-                                        class="btn btn-primary" target="_blank">Ver Proyecto</a>
-                                </div>
-                            </div>
+                    <article class="glass project reveal">
+                        <div class="project-media">
+                            <img src="assets/flappy.png" alt="Vista previa de FlappyGame" loading="lazy">
+                            <div class="stack"><i class="fab fa-java" title="Java"></i><i class="fab fa-android" title="Android"></i></div>
                         </div>
-                    </div>
+                        <div class="project-body">
+                            <h3>FlappyGame</h3>
+                            <p>Juego tipo Flappy Bird desarrollado en Android Studio.</p>
+                            <a href="https://github.com/F3LIP3X/FlappyGame" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Ver proyecto <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
 
-                    <!-- Prueba-Tecnica-Optima-Cultura-Rick-Morty-Felipe-Jose -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card">
-                            <div class="project-image-container">
-                                <img src="assets/vue-nuxt.jpg"
-                                    alt="Vista previa de Prueba-Tecnica-Optima-Cultura-Rick-Morty-Felipe-Jose" loading="lazy">
-                                <div class="tech-stack">
-                                    <i class="fab fa-vuejs" title="Vue"></i>
-                                    <i class="fas fa-layer-group" title="Nuxt.js"></i>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h3>Prueba Técnica Óptima Cultura</h3>
-                                <p>Prueba técnica desarrollada con Vue para la temática de Rick y Morty.</p>
-                                <div class="card-actions">
-                                    <a href="https://github.com/F3LIP3X/Prueba-Tecnica-Optima-Cultura-Rick-Morty-Felipe-Jose"
-                                        class="btn btn-primary" target="_blank">Ver Proyecto</a>
-                                </div>
-                            </div>
+                    <article class="glass project reveal" style="--d:80ms">
+                        <div class="project-media">
+                            <img src="assets/mysql-spring.png" alt="Vista previa de Film-MVC-Spring-Postman-MongoDB" loading="lazy">
+                            <div class="stack"><i class="fab fa-java" title="Java"></i><i class="fas fa-database" title="MongoDB"></i></div>
                         </div>
+                        <div class="project-body">
+                            <h3>Film MVC · Spring · MongoDB</h3>
+                            <p>Proyecto Java con Spring Boot y MongoDB, con endpoints probados mediante Postman.</p>
+                            <a href="https://github.com/F3LIP3X/Film-MVC-Spring-Postman-MongoDB" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Ver proyecto <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="glass project reveal" style="--d:160ms">
+                        <div class="project-media">
+                            <img src="assets/vue-nuxt.jpg" alt="Vista previa de la prueba técnica Óptima Cultura" loading="lazy">
+                            <div class="stack"><i class="fab fa-vuejs" title="Vue"></i><i class="fas fa-layer-group" title="Nuxt.js"></i></div>
+                        </div>
+                        <div class="project-body">
+                            <h3>Prueba Técnica Óptima Cultura</h3>
+                            <p>Prueba técnica desarrollada con Vue sobre la temática de Rick y Morty.</p>
+                            <a href="https://github.com/F3LIP3X/Prueba-Tecnica-Optima-Cultura-Rick-Morty-Felipe-Jose" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Ver proyecto <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contact">
+            <div class="wrap">
+                <div class="glass contact-card reveal">
+                    <span class="eyebrow">06 — Contacto</span>
+                    <h2>¿Trabajamos juntos?</h2>
+                    <p class="section-sub">Cuéntame tu proyecto. Respondo rápido.</p>
+                    <a href="mailto:Felitol2008@gmail.com" class="btn btn-primary"><i class="fa-regular fa-envelope"></i>Envíame un correo</a>
+                    <div class="socials">
+                        <a href="https://www.linkedin.com/in/felipe-jos%C3%A9-toledano-escudero-4008bb194/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/F3LIP3X" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="./assets/CV_Felipe_Toledano.pdf" download aria-label="Descargar CV"><i class="fa-solid fa-file-arrow-down"></i></a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Contacto -->
-    <section id="contact" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-4 animate__animated animate__fadeIn">Contacto</h2>
-            <div class="text-center">
-                <p class="lead mb-4">¿Interesado en trabajar juntos? ¡Hablemos!</p>
-                <a href="mailto:Felitol2008@gmail.com" class="btn btn-primary btn-lg">
-                    <span><i class="fas fa-envelope me-2"></i>Envíame un correo electrónico!</span>
-                </a>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/felipe-jos%C3%A9-toledano-escudero-4008bb194/" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/F3LIP3X" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
+    <footer class="footer">
+        <div class="wrap">
+            <p>&copy; <span id="footer-year"></span> Felipe Toledano · Diseñado y desarrollado en Granada</p>
         </div>
-    </section>
+    </footer>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; <span id="footer-year"></span> Felipe Toledano. Todos los derechos reservados.</p>
-        <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
-    </footer> <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom JavaScript for scroll animations -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const navbar = document.querySelector('.navbar');
-            const heroContainer = document.querySelector('#hero .container');
-            const hero = document.querySelector('#hero');
+        (function () {
+            'use strict';
 
-            function handleNavbarScroll() {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
+            var root = document.documentElement;
+
+            /* ---- Tema claro / oscuro ---- */
+            var themeBtn = document.getElementById('themeBtn');
+            var themeIcon = document.getElementById('themeIcon');
+
+            function paintTheme() {
+                var dark = root.getAttribute('data-theme') === 'dark';
+                themeIcon.className = dark ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+                var meta = document.querySelector('meta[name="theme-color"]');
+                if (meta) meta.setAttribute('content', dark ? '#06070a' : '#eef1f6');
             }
+            paintTheme();
 
-            function handleHeroScroll() {
-                if (!heroContainer) return;
-                const scrollY = window.scrollY;
-                const heroHeight = hero.offsetHeight;
-                const scrollProgress = Math.min(scrollY / (heroHeight * 0.5), 1);
-                heroContainer.style.transform = `translateY(${scrollProgress * 50}px) scale(${Math.max(0.9, 1 - scrollProgress * 0.1)})`;
-                heroContainer.style.opacity = Math.max(0.3, 1 - scrollProgress * 0.7);
-            }
-
-            function handleScroll() {
-                handleNavbarScroll();
-                handleHeroScroll();
-            }
-
-            // Throttle con rAF y passive:true para no bloquear el hilo principal
-            let scrollTicking = false;
-            window.addEventListener('scroll', function () {
-                if (!scrollTicking) {
-                    requestAnimationFrame(function () {
-                        handleScroll();
-                        scrollTicking = false;
-                    });
-                    scrollTicking = true;
-                }
-            }, { passive: true });
-
-            const observer = new IntersectionObserver(function (entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate__fadeInUp');
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-            document.querySelectorAll('section:not(#hero)').forEach(section => {
-                observer.observe(section);
+            themeBtn.addEventListener('click', function () {
+                var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                root.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) { }
+                paintTheme();
             });
 
-            handleScroll();
-        });
-    </script>
-    <script>
-    (function() {
-        var start = new Date('2026-06-01');
-        var now = new Date();
-        var days = Math.floor((now - start) / (1000 * 60 * 60 * 24));
-        var months = Math.floor(days / 30.44);
-        var text;
-        if (days < 30) {
-            text = days === 1 ? '1 día' : days + ' días';
-        } else if (months === 1) {
-            text = '1 mes';
-        } else {
-            text = months + ' meses';
-        }
-        var el = document.getElementById('quantia-duration');
-        if (el) el.textContent = text;
-    })();
+            /* ---- Menú móvil ---- */
+            var navToggle = document.getElementById('navToggle');
+            var navLinks = document.getElementById('navLinks');
+
+            navToggle.addEventListener('click', function () {
+                var open = navLinks.classList.toggle('open');
+                navToggle.setAttribute('aria-expanded', String(open));
+                navToggle.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+            });
+            navLinks.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    navLinks.classList.remove('open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+
+            /* ---- Nav: estado scrolled + enlace activo ---- */
+            var nav = document.getElementById('nav');
+            var links = Array.prototype.slice.call(navLinks.querySelectorAll('a'));
+            var sections = links
+                .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+                .filter(Boolean);
+
+            var ticking = false;
+            function onScroll() {
+                nav.classList.toggle('scrolled', window.scrollY > 40);
+
+                var pos = window.scrollY + 140;
+                var current = null;
+                sections.forEach(function (s) {
+                    if (s.offsetTop <= pos) current = s.id;
+                });
+                links.forEach(function (a) {
+                    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+                });
+                ticking = false;
+            }
+            window.addEventListener('scroll', function () {
+                if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+            }, { passive: true });
+            onScroll();
+
+            /* ---- Reveal al hacer scroll ---- */
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+            document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+            /* ---- Filtro de habilidades ---- */
+            var filterBtns = document.querySelectorAll('.filter-btn');
+            var skills = document.querySelectorAll('#skillsGrid .skill');
+
+            filterBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    filterBtns.forEach(function (b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    var f = btn.dataset.filter;
+                    skills.forEach(function (s) {
+                        s.classList.toggle('hide', f !== 'all' && s.dataset.cat !== f);
+                    });
+                });
+            });
+
+            /* ---- Datos dinámicos ---- */
+            document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+            (function () {
+                var start = new Date('2026-06-01');
+                var now = new Date();
+                var days = Math.floor((now - start) / 86400000);
+                var months = Math.floor(days / 30.44);
+                var text = days < 30
+                    ? (days === 1 ? '1 día' : days + ' días')
+                    : (months === 1 ? '1 mes' : months + ' meses');
+                var el = document.getElementById('quantia-duration');
+                if (el) el.textContent = text;
+
+                var first = new Date('2024-03-01');
+                var years = Math.max(1, Math.floor((now - first) / (86400000 * 365.25)));
+                var ys = document.getElementById('statYears');
+                if (ys) ys.textContent = '+' + years;
+            })();
+        })();
     </script>
 </body>
 
-</h
+</html>
