@@ -844,24 +844,158 @@ section { padding: clamp(72px, 11vh, 132px) 0; position: relative; }
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 10%;
   padding: 12%;
+  position: relative;
+  overflow: hidden;
 }
-.mockui-line {
-  height: 9%;
-  min-height: 5px;
-  border-radius: 4px;
-  background: color-mix(in oklab, var(--ink) 16%, transparent);
+
+/* ---- piezas reutilizables ---- */
+.mockui-avatar {
+  flex: none;
+  width: 15%; aspect-ratio: 1;
+  min-width: 22px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font: 700 .62rem var(--font-display);
+  color: var(--accent-ink);
+  background: linear-gradient(140deg, var(--accent), var(--accent-2));
 }
-.mockui-line.w60 { width: 60%; }
-.mockui-line.w40 { width: 40%; }
-.mockui-block {
+.mockui-avatar.alt { background: linear-gradient(140deg, var(--accent-2), var(--accent-3)); }
+.mockui-pill {
+  flex: none;
+  padding: 3% 8%;
+  border-radius: var(--r-full);
+  font: 700 .58rem var(--font-mono);
+  white-space: nowrap;
+  color: var(--accent-ink);
+  background: linear-gradient(140deg, var(--accent), var(--accent-2));
+}
+.mockui-tag {
+  font: 600 .56rem var(--font-sans);
+  padding: 3% 7%;
+  border-radius: var(--r-full);
+  white-space: nowrap;
+  color: var(--ink);
+  background: color-mix(in oklab, var(--ink) 14%, transparent);
+}
+.mockui-tag.ok {
+  color: #1f9d4d;
+  background: rgba(52, 199, 89, .18);
+}
+
+/* SWORK — matching */
+.mockui-match { flex-direction: row; align-items: center; justify-content: space-between; }
+.mockui-match-line {
   flex: 1;
-  border-radius: 8px;
-  background: linear-gradient(135deg,
-    color-mix(in oklab, var(--accent) 32%, transparent),
-    color-mix(in oklab, var(--accent-2) 26%, transparent));
+  height: 1px;
+  margin: 0 6%;
+  background: repeating-linear-gradient(90deg,
+    color-mix(in oklab, var(--ink) 30%, transparent) 0 4px, transparent 4px 8px);
 }
+
+/* Segures Task's — filas de pólizas */
+.mockui-list { justify-content: center; gap: 8%; }
+.mockui-row {
+  display: flex; align-items: center; gap: 6%;
+  font: 600 .6rem var(--font-sans);
+  color: var(--ink-2);
+}
+.mockui-row span { flex: 1; }
+
+/* STEMFounding — kanban */
+.mockui-kanban { flex-direction: row; align-items: stretch; gap: 6%; }
+.mockui-col {
+  flex: 1;
+  display: flex; flex-direction: column; gap: 10%;
+  padding: 6%;
+  border-radius: 6px;
+  background: color-mix(in oklab, var(--ink) 6%, transparent);
+}
+.mockui-col span {
+  font: 700 .48rem var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--ink-3);
+}
+.mockui-card {
+  height: 12px;
+  border-radius: 4px;
+  background: color-mix(in oklab, var(--accent) 30%, transparent);
+}
+.mockui-card.alt { background: color-mix(in oklab, var(--accent-2) 30%, transparent); }
+
+/* ArenaCamping — calendario */
+.mockui-cal { align-items: center; }
+.mockui-cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4%; width: 100%; }
+.mockui-cal-grid span {
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: color-mix(in oklab, var(--ink) 12%, transparent);
+}
+.mockui-cal-grid span.on {
+  background: linear-gradient(140deg, var(--accent), var(--accent-2));
+}
+
+/* MongoDB-Spring-Maven — tabla */
+.mockui-table { gap: 6%; }
+.mockui-trow { display: flex; gap: 8%; }
+.mockui-trow span:first-child {
+  flex: none; width: 16%;
+  font: 700 .56rem var(--font-mono);
+  color: var(--ink-3);
+}
+.mockui-trow span.bar {
+  flex: 1; height: 8px;
+  border-radius: 3px;
+  background: color-mix(in oklab, var(--ink) 14%, transparent);
+}
+.mockui-trow.head span:first-child,
+.mockui-trow.head span:last-child {
+  font: 700 .5rem var(--font-mono);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  background: none;
+  height: auto;
+}
+
+/* FlappyGame */
+.mockui-game { padding: 0; }
+.mockui-score {
+  position: absolute; top: 10%; left: 50%; transform: translateX(-50%);
+  font: 700 .78rem var(--font-mono);
+  color: var(--ink);
+  opacity: .85;
+}
+.mockui-bird {
+  position: absolute; left: 30%; top: 48%;
+  width: 10%; aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(140deg, var(--accent-3), var(--accent-2));
+}
+.mockui-pipe {
+  position: absolute; right: 26%;
+  width: 11%;
+  border-radius: 3px;
+  background: color-mix(in oklab, var(--ink) 20%, transparent);
+}
+.mockui-pipe.top { top: 0; height: 32%; }
+.mockui-pipe.bottom { bottom: 0; height: 38%; }
+
+/* Film MVC — pósters */
+.mockui-posters { flex-direction: row; align-items: flex-end; justify-content: center; gap: 8%; }
+.mockui-posters .poster {
+  flex: none; width: 22%; border-radius: 5px;
+  background: linear-gradient(160deg, var(--accent), var(--accent-2));
+}
+.mockui-posters .poster.p1 { height: 70%; }
+.mockui-posters .poster.p2 { height: 92%; background: linear-gradient(160deg, var(--accent-2), var(--accent-3)); }
+.mockui-posters .poster.p3 { height: 60%; background: linear-gradient(160deg, var(--accent-3), var(--accent)); }
+
+/* Prueba técnica — grid de personajes */
+.mockui-chargrid { flex-direction: row; align-items: center; justify-content: center; gap: 6%; }
+.mockui-chargrid .mockui-avatar.sm { min-width: 16px; font-size: 0; }
 .project-media::after {
   content: "";
   position: absolute;
