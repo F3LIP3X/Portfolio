@@ -32,12 +32,25 @@ Landing page de una sola página construida con **React + Vite + TypeScript + Ta
 
 ```
 Portfolio/
-├── index.html              # Entry HTML de Vite (metadatos SEO/OG)
+├── index.html                    # Entry HTML de Vite (metadatos SEO/OG)
 ├── src/
-│   ├── main.tsx             # Bootstrap de React
-│   ├── App.tsx               # Layout + lógica de interacción (tema, scroll, reveal…)
-│   ├── index.css              # Tailwind + sistema de diseño ("liquid glass")
-│   └── components/             # Nav, Hero, About, Education, Experience, Skills, Projects, Contact, Footer
+│   ├── main.tsx                   # Bootstrap de React
+│   ├── App.tsx                     # Composición del layout (sin lógica propia)
+│   ├── index.css                    # Tailwind + sistema de diseño ("liquid glass")
+│   ├── components/                   # Un componente por sección/pieza de UI
+│   │   ├── Ambient.tsx                 # Fondo decorativo (orbes)
+│   │   ├── ScrollProgress.tsx           # Barra de progreso de scroll
+│   │   ├── Nav.tsx                       # Navegación: tema, menú móvil, sección activa
+│   │   ├── Hero.tsx, About.tsx, Education.tsx, Experience.tsx,
+│   │   │   Skills.tsx, Projects.tsx, Contact.tsx, Footer.tsx
+│   │   └── Stat.tsx                      # Contador animado reutilizable (usado en About)
+│   └── hooks/                        # Lógica de interacción, cada una dueña de su estado
+│       ├── useTheme.ts                 # Tema claro/oscuro + localStorage
+│       ├── useActiveSection.ts          # Sección activa del nav + estado "scrolled"
+│       ├── useScrollProgress.ts          # % de scroll para la barra de progreso
+│       ├── useHeroParallax.ts             # Parallax del hero (vía ref, sin re-render)
+│       ├── useCountUp.ts                   # Animación de conteo al entrar en viewport
+│       └── useRevealOnScroll.ts             # Reveal-on-scroll + stagger (cross-cutting)
 ├── public/
 │   ├── assets/                  # CV, fotos, logos de empresas/instituciones
 │   ├── robots.txt
@@ -45,6 +58,11 @@ Portfolio/
 ├── .github/workflows/deploy.yml   # Build + deploy automático a GitHub Pages
 └── LICENSE
 ```
+
+Cada pieza de estado vive en el componente o hook que la usa (p. ej. el filtro de
+`Skills` es un `useState` local, el tema vive en `useTheme`); solo el reveal-on-scroll
+y el stagger quedan en un hook a nivel de página porque son puramente decorativos y
+no pertenecen a ningún componente en concreto.
 
 ## Desarrollo local
 

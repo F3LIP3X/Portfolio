@@ -1,3 +1,10 @@
+import Stat from './Stat'
+
+function yearsOfExperience() {
+  const first = new Date('2024-03-01')
+  return Math.max(1, Math.floor((Date.now() - first.getTime()) / (86400000 * 365.25)))
+}
+
 export default function About() {
   return (
     <section id="about">
@@ -44,9 +51,9 @@ export default function About() {
             </ul>
 
             <div className="stat-row">
-              <div className="glass stat"><b id="statYears">+1</b><span>Años de experiencia</span></div>
-              <div className="glass stat"><b>30</b><span>Tecnologías</span></div>
-              <div className="glass stat"><b>8</b><span>Proyectos destacados</span></div>
+              <Stat target={yearsOfExperience()} prefix="+" label="Años de experiencia" />
+              <Stat target={30} label="Tecnologías" />
+              <Stat target={8} label="Proyectos destacados" />
             </div>
           </div>
         </div>

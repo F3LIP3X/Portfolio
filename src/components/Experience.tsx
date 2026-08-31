@@ -1,3 +1,11 @@
+function quantiaDuration() {
+  const start = new Date('2026-06-01')
+  const days = Math.floor((Date.now() - start.getTime()) / 86400000)
+  const months = Math.floor(days / 30.44)
+  if (days < 30) return days === 1 ? '1 día' : `${days} días`
+  return months === 1 ? '1 mes' : `${months} meses`
+}
+
 export default function Experience() {
   return (
     <section id="experience">
@@ -24,7 +32,7 @@ export default function Experience() {
                 <p className="exp-meta">
                   <strong>QUANTIA Ingeniería y Consultoría</strong>
                   <span className="sep">·</span> Jun. 2026 — actualidad
-                  <span className="sep">·</span> <span id="quantia-duration"></span>
+                  <span className="sep">·</span> <span>{quantiaDuration()}</span>
                   <span className="sep">·</span> Granada
                   <span className="sep">·</span> Híbrido
                 </p>

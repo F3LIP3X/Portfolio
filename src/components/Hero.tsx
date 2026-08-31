@@ -1,7 +1,11 @@
+import { useHeroParallax } from '../hooks/useHeroParallax'
+
 export default function Hero() {
+  const { heroRef, innerRef } = useHeroParallax<HTMLElement, HTMLDivElement>()
+
   return (
-    <header id="hero">
-      <div className="wrap hero-inner">
+    <header id="hero" ref={heroRef}>
+      <div className="wrap hero-inner" ref={innerRef}>
         <span className="eyebrow reveal r-soft"><span className="live"></span>Full Stack · React &amp; NestJS · Granada</span>
 
         <h1 className="hero-title reveal r-soft" style={{ ['--d' as string]: '170ms' }}>
@@ -17,7 +21,7 @@ export default function Hero() {
         <div className="hero-actions reveal" style={{ ['--d' as string]: '340ms' }}>
           <a href="#projects" className="btn btn-primary"><i className="fa-solid fa-layer-group"></i>Ver proyectos</a>
           <a href="#contact" className="btn"><i className="fa-regular fa-envelope"></i>Contactar</a>
-          <a href="./assets/CV_Felipe_Toledano.pdf?v=202608" className="btn" download id="cvDownload"><i className="fa-solid fa-arrow-down"></i>Descargar CV</a>
+          <a href="./assets/CV_Felipe_Toledano.pdf?v=202608" className="btn" download><i className="fa-solid fa-arrow-down"></i>Descargar CV</a>
         </div>
 
         <div className="hero-meta" data-stagger="70">

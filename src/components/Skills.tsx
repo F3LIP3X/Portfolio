@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const SKILLS: { cat: string; icon: string; label: string }[] = [
   { cat: 'front', icon: 'fab fa-react', label: 'React' },
   { cat: 'front', icon: 'fab fa-angular', label: 'Angular' },
@@ -40,6 +42,8 @@ const FILTERS = [
 ]
 
 export default function Skills() {
+  const [filter, setFilter] = useState('all')
+
   return (
     <section id="skills">
       <div className="wrap">
@@ -51,13 +55,26 @@ export default function Skills() {
 
         <div className="skill-filters reveal" role="tablist" aria-label="Filtros de habilidades">
           {FILTERS.map((f) => (
-            <button key={f.key} className={`filter-btn${f.key === 'all' ? ' active' : ''}`} type="button" data-filter={f.key}>{f.label}</button>
+            <button
+              key={f.key}
+              className={`filter-btn${filter === f.key ? ' active' : ''}`}
+              type="button"
+              onClick={() => setFilter(f.key)}
+            >
+              {f.label}
+            </button>
           ))}
         </div>
 
-        <div className="skills-grid" id="skillsGrid">
+        <div className="skills-grid">
           {SKILLS.map((s) => (
-            <div key={s.label} className="glass skill reveal" data-cat={s.cat}><i className={s.icon}></i><span>{s.label}</span></div>
+            <div
+              key={s.label}
+              className={`glass skill reveal${filter !== 'all' && s.cat !== filter ? ' hide' : ''}`}
+              data-cat={s.cat}
+            >
+              <i className={s.icon}></i><span>{s.label}</span>
+            </div>
           ))}
         </div>
       </div>
