@@ -8,6 +8,8 @@ Portafolio personal de **Felipe José Toledano Escudero**, desarrollador Full St
 
 **🔗 Sitio en vivo:** [f3lip3x.github.io/Portfolio](https://f3lip3x.github.io/Portfolio/)
 
+![Portada del portfolio](./docs/cover.png)
+
 ## Sobre el proyecto
 
 Landing page de una sola página construida con **React + Vite + TypeScript + Tailwind CSS**. Incluye tema claro/oscuro persistente, animaciones de entrada al hacer scroll, navegación con sección activa, filtro de habilidades por categoría y contadores animados.
