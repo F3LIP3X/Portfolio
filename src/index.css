@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* =========================================================
    Felipe Toledano — Portfolio
    Liquid Glass UI · Apple-inspired design system

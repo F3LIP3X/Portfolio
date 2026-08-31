@@ -1,6 +1,6 @@
 # Felipe Toledano — Portfolio
 
-[![Deploy](https://img.shields.io/github/deployments/F3LIP3X/Portfolio/github-pages?label=deploy&logo=github)](https://f3lip3x.github.io/Portfolio/)
+[![Deploy](https://img.shields.io/github/actions/workflow/status/F3LIP3X/Portfolio/deploy.yml?branch=main&label=deploy&logo=github)](https://f3lip3x.github.io/Portfolio/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-informational.svg)](./LICENSE)
 [![Last commit](https://img.shields.io/github/last-commit/F3LIP3X/Portfolio)](https://github.com/F3LIP3X/Portfolio/commits/main)
 
@@ -10,13 +10,12 @@ Portafolio personal de **Felipe José Toledano Escudero**, desarrollador Full St
 
 ## Sobre el proyecto
 
-Landing page de una sola página construida con HTML, CSS y JavaScript "vanilla" — sin frameworks ni build step. Incluye tema claro/oscuro persistente, animaciones de entrada al hacer scroll, navegación con sección activa, filtro de habilidades por categoría y contadores animados.
+Landing page de una sola página construida con **React + Vite + TypeScript + Tailwind CSS**. Incluye tema claro/oscuro persistente, animaciones de entrada al hacer scroll, navegación con sección activa, filtro de habilidades por categoría y contadores animados.
 
 ## Stack
 
-- **HTML5** semántico, con metadatos SEO y Open Graph completos
-- **CSS3** — sistema de diseño propio ("liquid glass"), sin frameworks (Bootstrap/Tailwind)
-- **JavaScript** vanilla (IIFE), sin dependencias de runtime
+- **React 19** + **TypeScript**, empaquetado con **Vite**
+- **Tailwind CSS** (configurado; el sistema de diseño "liquid glass" original se mantiene como CSS global en `src/index.css`)
 - [Font Awesome](https://fontawesome.com/) para iconografía
 - Fuentes [Inter / Inter Tight / JetBrains Mono](https://fonts.google.com/) vía Google Fonts
 
@@ -33,31 +32,39 @@ Landing page de una sola página construida con HTML, CSS y JavaScript "vanilla"
 
 ```
 Portfolio/
-├── index.html          # Contenido y lógica de la página
-├── styles.css           # Sistema de diseño y estilos
-├── robots.txt            # Directivas para crawlers
-├── sitemap.xml            # Mapa del sitio
-├── LICENSE
-└── assets/
-    ├── CV_Felipe_Toledano.pdf
-    ├── institutions/     # Logos de centros educativos
-    └── *.jpg, *.png       # Fotografía y logos de empresas
+├── index.html              # Entry HTML de Vite (metadatos SEO/OG)
+├── src/
+│   ├── main.tsx             # Bootstrap de React
+│   ├── App.tsx               # Layout + lógica de interacción (tema, scroll, reveal…)
+│   ├── index.css              # Tailwind + sistema de diseño ("liquid glass")
+│   └── components/             # Nav, Hero, About, Education, Experience, Skills, Projects, Contact, Footer
+├── public/
+│   ├── assets/                  # CV, fotos, logos de empresas/instituciones
+│   ├── robots.txt
+│   └── sitemap.xml
+├── .github/workflows/deploy.yml   # Build + deploy automático a GitHub Pages
+└── LICENSE
 ```
 
 ## Desarrollo local
 
-No requiere instalación de dependencias. Basta con servir el directorio como sitio estático:
-
 ```bash
 git clone https://github.com/F3LIP3X/Portfolio.git
 cd Portfolio
-python3 -m http.server 8000
-# abre http://localhost:8000
+npm install
+npm run dev       # http://localhost:5173/Portfolio/
+```
+
+```bash
+npm run build      # compila a dist/
+npm run preview      # sirve dist/ localmente
 ```
 
 ## Despliegue
 
-El sitio se publica automáticamente en **GitHub Pages** desde la rama `main`.
+El sitio se publica automáticamente en **GitHub Pages** en cada push a `main` vía GitHub Actions (`.github/workflows/deploy.yml`), que compila con Vite y sube el resultado con `actions/deploy-pages`.
+
+> **Configuración única necesaria:** en el repo de GitHub, ir a *Settings → Pages → Build and deployment → Source* y seleccionar **GitHub Actions** (en vez de "Deploy from a branch").
 
 ## Contacto
 

@@ -7,6 +7,8 @@ Thumbs.db
 .idea/
 *.swp
 
-# Local env / tooling (not used yet, kept for future-proofing)
+# Local env / tooling
 node_modules/
 .env
+dist/
+*.tsbuildinfo
