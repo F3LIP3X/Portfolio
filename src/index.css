@@ -1177,3 +1177,18 @@ section { padding: clamp(72px, 11vh, 132px) 0; position: relative; }
   background-clip: content-box;
 }
 ::-webkit-scrollbar-thumb:hover { background: color-mix(in oklab, var(--accent) 60%, transparent); background-clip: content-box; }
+
+/* Billar 3D */
+.mockui-pool { padding: 0; background: radial-gradient(ellipse at 50% 40%, #1f4fa8 0%, #12306b 100%); }
+.pool-ball {
+  position: absolute; width: 17%; aspect-ratio: 1; border-radius: 50%;
+  display: grid; place-items: center;
+  font: 700 .62rem var(--font-mono);
+  box-shadow: inset -3px -4px 6px rgba(0,0,0,.35), 0 3px 6px rgba(0,0,0,.4);
+}
+.pool-ball.cue { left: 18%; top: 50%; background: radial-gradient(circle at 35% 30%, #fff, #d9d6cc); }
+.pool-ball.eight { left: 56%; top: 30%; background: radial-gradient(circle at 35% 30%, #444, #050505); color: #fff; }
+.pool-ball.solid { left: 70%; top: 58%; background: radial-gradient(circle at 35% 30%, #ffd24a, #d79a00); }
+.pool-pocket { position: absolute; width: 9%; aspect-ratio: 1; border-radius: 50%; background: #050a14; }
+.pool-pocket.tl { left: 2%; top: 4%; }
+.pool-pocket.br { right: 2%; bottom: 4%; }

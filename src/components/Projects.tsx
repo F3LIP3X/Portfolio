@@ -89,9 +89,11 @@ export default function Projects() {
                   <span className="dot"></span><span className="dot"></span><span className="dot"></span>
                   <i className="fa-solid fa-circle-dot mockui-icon" aria-hidden="true"></i>
                 </div>
-                <div className="mockui-body mockui-game">
-                  <div className="mockui-score">8</div>
-                  <div className="mockui-bird"></div>
+                <div className="mockui-body mockui-pool">
+                  <span className="pool-ball cue"></span>
+                  <span className="pool-ball eight">8</span>
+                  <span className="pool-ball solid"></span>
+                  <span className="pool-pocket tl"></span><span className="pool-pocket br"></span>
                 </div>
               </div>
               <div className="stack"><i className="fas fa-cube" title="Three.js"></i><i className="fab fa-js" title="TypeScript"></i><i className="fas fa-fire" title="Firebase"></i></div>
