@@ -53,7 +53,7 @@ export default function About() {
             <div className="stat-row">
               <Stat target={yearsOfExperience()} prefix="+" label="Años de experiencia" />
               <Stat target={30} label="Tecnologías" />
-              <Stat target={8} label="Proyectos destacados" />
+              <Stat target={9} label="Proyectos destacados" />
             </div>
           </div>
         </div>

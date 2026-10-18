@@ -82,6 +82,27 @@ export default function Projects() {
             </div>
           </article>
 
+          <article className="glass project reveal">
+            <div className="project-media media-gradient g4">
+              <div className="mockui">
+                <div className="mockui-bar">
+                  <span className="dot"></span><span className="dot"></span><span className="dot"></span>
+                  <i className="fa-solid fa-circle-dot mockui-icon" aria-hidden="true"></i>
+                </div>
+                <div className="mockui-body mockui-game">
+                  <div className="mockui-score">8</div>
+                  <div className="mockui-bird"></div>
+                </div>
+              </div>
+              <div className="stack"><i className="fas fa-cube" title="Three.js"></i><i className="fab fa-js" title="TypeScript"></i><i className="fas fa-fire" title="Firebase"></i></div>
+            </div>
+            <div className="project-body">
+              <h3>Billar 3D</h3>
+              <p>Billar americano en 3D para el navegador, con física propia, reglas oficiales y multijugador online por sala. Three.js, TypeScript y Firebase.</p>
+              <a href="https://billar3d.web.app" className="btn btn-sm btn-primary" target="_blank" rel="noopener">Jugar <i className="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+
           <article className="glass project reveal" style={{ ['--d' as string]: '80ms' }}>
             <div className="project-media media-gradient g4">
               <div className="mockui">
