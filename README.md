@@ -89,7 +89,7 @@ El sitio se publica automáticamente en **GitHub Pages** en cada push a `main` v
 ## Contacto
 
 - 📧 [felitol2008@gmail.com](mailto:felitol2008@gmail.com)
-- 💼 [LinkedIn](https://www.linkedin.com/in/felipe-jos%C3%A9-toledano-escudero-4008bb194/)
+- 💼 [LinkedIn](https://www.linkedin.com/in/felipe-toledano-escudero)
 - 🐙 [GitHub](https://github.com/F3LIP3X)
 
 ## Licencia
